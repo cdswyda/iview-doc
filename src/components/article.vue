@@ -52,8 +52,11 @@
                                 <!--<a href="https://segmentfault.com/ls/1650000011074057" target="_blank" @click="handleAsideAd('aside-iview-live')" class="wrapper-aside">-->
                                     <!--<img src="../images/aside-iview-live.png">-->
                                 <!--</a>-->
-                                <a href="https://cn.udacity.com/course/intro-to-python-nanodegree-foundation--nd000-cn-python/?utm_source=iviewui&utm_medium=banner&utm_campaign=python" target="_blank" @click="handleAsideAd('aside-udacity')" class="wrapper-aside wrapper-aside-no-padding">
+                                <a v-if="ad_index === 1" href="https://cn.udacity.com/course/intro-to-python-nanodegree-foundation--nd000-cn-python/?utm_source=iviewui&utm_medium=banner&utm_campaign=python" target="_blank" @click="handleAsideAd('aside-udacity')" class="wrapper-aside wrapper-aside-no-padding">
                                     <img src="../images/aside-udacity-4.jpg">
+                                </a>
+                                <a v-if="ad_index === 2" href="https://cn.udacity.com/fend/?utm_source=iviewui&utm_medium=banner&utm_campaign=fend" target="_blank" @click="handleAsideAd('aside-udacity')" class="wrapper-aside wrapper-aside-no-padding">
+                                    <img src="../images/aside-udacity-5.jpg">
                                 </a>
                                 <div class="wrapper-aside" @click="handleAsideAd('aside-qqgroup', true)">
                                     <img src="../images/aside-qqgroup.png">
@@ -146,10 +149,10 @@
                                     <img src="../images/logo-td.png">
                                 </a>
                             </div>
-                            <div class="footer-version">
-                                <p>{{ $t('index.current_version') }}</p>
-                                <p>Vue.js 2.5.13, iView 2.8.0</p>
-                            </div>
+                            <!--<div class="footer-version">-->
+                                <!--<p>{{ $t('index.current_version') }}</p>-->
+                                <!--<p>Vue.js 2.5.13, iView 2.9.0</p>-->
+                            <!--</div>-->
                         </div>
                     </i-col>
                 </Row>
@@ -171,10 +174,15 @@
                 <p>联系邮箱 <a href="mailto:admin@aresn.com">admin@aresn.com</a> 咨询。</p>
                 <p>广告位如下图所示：</p>
                 <div>
-                    <Carousel v-if="donate" v-model="adCarousel" loop autoplay :autoplay-speed="3000" dots="outside">
+                    <Carousel v-if="donate" v-model="adCarousel" autoplay :autoplay-speed="5000" dots="outside">
                         <CarouselItem>
                             <div class="demo-carousel" style="height: 300px">
                                 <img src="../images/ad-demo1.png" style="width: 100%">
+                            </div>
+                        </CarouselItem>
+                        <CarouselItem>
+                            <div class="demo-carousel" style="height: 300px;">
+                                <img src="../images/ad-demo3.png" style="width: 100%">
                             </div>
                         </CarouselItem>
                         <CarouselItem>
@@ -198,10 +206,10 @@
         <Modal v-model="ask" title="免费加入 iView 官方QQ群参与讨论" class-name="vertical-center-modal">
             <div class="ivu-article">
                 <p>免费加入官方QQ讨论群，交流 iView 技术问题。</p>
-                <p>群号：<strong>623520058</strong></p>
+                <p>群号：<strong>71434987</strong></p>
                 <p>二维码：</p>
                 <p>
-                    <img src="../images/qqgroup2.png" style="display: block;width: 50%;margin: 0 auto;">
+                    <img src="../images/qqgroup3.png" style="display: block;width: 50%;margin: 0 auto;">
                 </p>
                 <p>
                     <Alert show-icon>仅限开发者加入，请勿讨论与技术无关的问题，比如发招聘信息等。</Alert>
@@ -297,7 +305,7 @@
         },
         mounted () {
             // 随机广告索引
-            this.ad_index = Math.floor(Math.random () * 3 + 1);
+            this.ad_index = Math.floor(Math.random () * 2 + 1);
 
 
             this.updateActiveNav();
