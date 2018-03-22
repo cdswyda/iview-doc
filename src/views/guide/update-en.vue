@@ -25,6 +25,69 @@
         <article class="doc-update">
             <Timeline pending>
                 <Timeline-item>
+                    <Icon type="planet" size="18" slot="dot"></Icon>
+                    <Anchor title="2.11.0 Alto's Odyssey" h2>
+                        <span class="doc-update-important">Mourning Stephen Hawking</span>
+                    </Anchor>
+                    <p>
+                        <code>2018-03-14</code>
+                    </p>
+                    <ul>
+                        <li>InputNumber add formatted display properties <code>formatter</code> and <code>parser</code>. <issue id="3081"></issue></li>
+                        <li>Input add new property <code>wrap</code>. <issue id="3086"></issue></li>
+                        <li>Page add new property <code>transfer</code>. <issue id="3112"></issue></li>
+                        <li>Optimized Select style, enhanced keyboard accessibility, closer to native. <issue id="1647"></issue></li>
+                        <li>Fixed Menu with inline Submenu bug that throw errors after Vue.js 2.5.14. <a href="https://github.com/iview/iview/commit/b71a171d36e1327ee8fe1cc4f35fe97887f0786c" target="_blank">b71a171</a></li>
+                        <li>Fixed Select bug in different sizes, the multiple mode style is wrong. <issue id="2451"></issue></li>
+                        <li>Fixed Cascader style bug under search mode.</li>
+                        <li>Fixed Input style bug when <code>size="small"</code> and using <code>append</code> or <code>prepend</code>.</li>
+                        <li>Optimized Collapse style. <issue id="2973"></issue></li>
+                        <li>Add Dutch. <mention id="mervy-sim"></mention></li>
+                    </ul>
+                </Timeline-item>
+                <Timeline-item>
+                    <Anchor title="2.10.1" h2></Anchor>
+                    <p>
+                        <code>2018-03-09</code>
+                    </p>
+                    <ul>
+                        <li>Fixed the problem of large file size after compiling in version 2.10.0</li>
+                    </ul>
+                </Timeline-item>
+                <Timeline-item>
+                    <Anchor title="2.10.0 Reigns" h2></Anchor>
+                    <p>
+                        <code>2018-03-09</code>
+                    </p>
+                    <ul>
+                        <li>
+                            Refactor the DatePicker component. <issue id="2861"></issue>
+                            <ul>
+                                <li><code>daterange</code> supports right-to-left selection. <issue id="2731"></issue></li>
+                                <li>Add property <code>split-panels</code>, when open it, the left and right panels are not interconnected during the switching year and month. <issue id="2067"></issue></li>
+                                <li>Add property <code>multiple</code>, when open it, you can select multiple dates.</li>
+                                <li>Add property <code>start-date</code>, you can set the date to display by default when the panel is expanded. <issue id="2814"></issue></li>
+                                <li>Add property <code>show-week-numbers</code>, when open it, you can display the numbers of week.</li>
+                                <li>Add property <code>time-picker-options</code>, TimePicker attributes can be configured under the type <code>datetime</code> and <code>datetimerange</code>, such as <code>steps</code>. <issue id="3091"></issue></li>
+                                <li>Fixed the problem of unable to dynamically modify <code>type</code>. <issue id="2608"></issue></li>
+                                <li>Fixed the data bound with <code>v-model</code>, sometimes failing to update the panel. <issue id="2386"></issue></li>
+                                <li>Fixed the problem of entering a disabled date. <issue id="2544"></issue></li>
+                            </ul>
+                        </li>
+                        <li>Remove global style <code>ul</code> and <code>ol</code>. <issue id="3061"></issue></li>
+                        <li>Optimized Slider, Switch style, enhanced keyboard accessibility, closer to native. <issue id="1647"></issue></li>
+                        <li>Fixed Slider bug when set <code>step</code> property to decimal. <issue id="2984"></issue></li>
+                        <li>Fixed Select bug with empty Option, press the arrow keys will throw error. </li>
+                        <li>Fixed Avatar bug when use Chinese characters as slot, sometimes can not be centered. <issue id="3033"></issue></li>
+                        <li>Fixed Carousel bug that dots not update when <code>v-model</code> is not used. <issue id="3038"></issue></li>
+                        <li>Fixed an incorrectly-styled bug when Input was <code>size="small"</code> and using <code>prepend</code> or <code>append</code>. <issue id="3089"></issue></li>
+                        <li>Add Greek. <mention id="d4rth0nyx"></mention></li>
+                        <li>Optimize Chinese Traditional.</li>
+                        <li>Fixed bug in Romanian file. <issue id="3060"></issue></li>
+                        <blockquote>Special thanks to <mention id="SergioCrisostomo"></mention> and <mention id="Xotic750"></mention> contribution!</blockquote>
+                    </ul>
+                </Timeline-item>
+                <Timeline-item>
                     <Anchor title="2.9.2" h2></Anchor>
                     <p>
                         <code>2018-02-02</code>

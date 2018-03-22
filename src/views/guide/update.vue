@@ -25,6 +25,69 @@
         <article class="doc-update">
             <Timeline pending>
                 <Timeline-item>
+                    <Icon type="planet" size="18" slot="dot"></Icon>
+                    <Anchor title="2.11.0 Alto's Odyssey" h2>
+                        <span class="doc-update-important">悼念史蒂芬·霍金</span>
+                    </Anchor>
+                    <p>
+                        <code>2018-03-14</code>
+                    </p>
+                    <ul>
+                        <li>InputNumber 新增格式化展示属性 <code>formatter</code> 和 <code>parser</code>。<issue id="3081"></issue></li>
+                        <li>Input 增加 <code>wrap</code> 属性。<issue id="3086"></issue></li>
+                        <li>Page 增加 <code>transfer</code> 属性。<issue id="3112"></issue></li>
+                        <li>优化了 Select 样式与交互，增强键盘的可访问性，更接近原生。<issue id="1647"></issue></li>
+                        <li>修复 Menu 多层嵌套在 Vue.js 2.5.14 版本之后报错的 bug。<a href="https://github.com/iview/iview/commit/b71a171d36e1327ee8fe1cc4f35fe97887f0786c" target="_blank">b71a171</a></li>
+                        <li>修复 Select 在不同尺寸，多选样式和单选不一致的 bug。<issue id="2451"></issue></li>
+                        <li>修复 Cascader 在搜索时，样式不正确的 bug。</li>
+                        <li>修复 Input 在 <code>size="small"</code> 且使用 <code>append</code> 或 <code>prepend</code> 时，样式错误的 bug。</li>
+                        <li>优化 Collapse 样式。<issue id="2973"></issue></li>
+                        <li>新增荷兰语。<mention id="mervy-sim"></mention></li>
+                    </ul>
+                </Timeline-item>
+                <Timeline-item>
+                    <Anchor title="2.10.1" h2></Anchor>
+                    <p>
+                        <code>2018-03-09</code>
+                    </p>
+                    <ul>
+                        <li>修复 2.10.0 版本，编译后文件过大的问题。</li>
+                    </ul>
+                </Timeline-item>
+                <Timeline-item>
+                    <Anchor title="2.10.0 Reigns" h2></Anchor>
+                    <p>
+                        <code>2018-03-09</code>
+                    </p>
+                    <ul>
+                        <li>
+                            重构了 DatePicker 组件。<issue id="2861"></issue>
+                            <ul>
+                                <li><code>daterange</code> 支持从右往左选择。<issue id="2731"></issue></li>
+                                <li>新增 <code>split-panels</code> 属性，开启后，左右两面板可以不联动。<issue id="2067"></issue></li>
+                                <li>新增 <code>multiple</code> 属性，开启后，可以选择多个日期。</li>
+                                <li>新增 <code>start-date</code> 属性，可以设置面板展开时默认显示的日期。<issue id="2814"></issue></li>
+                                <li>新增属性 <code>show-week-numbers</code>，开启后，可以显示星期数。</li>
+                                <li>新增属性 <code>time-picker-options</code>，可以在 type 为 <code>datetime</code> 和 <code>datetimerange</code> 下，配置 TimePicker 的属性，比如时间间隔 <code>steps</code>。<issue id="3091"></issue></li>
+                                <li>修复无法动态修改 <code>type</code> 的问题。<issue id="2608"></issue></li>
+                                <li>修复使用 <code>v-model</code> 绑定的数据，有时无法更新面板的问题。<issue id="2386"></issue></li>
+                                <li>修复手动输入禁用的日期报错的问题。<issue id="2544"></issue></li>
+                            </ul>
+                        </li>
+                        <li>移除全局样式 <code>ul</code> 和 <code>ol</code>。<issue id="3061"></issue></li>
+                        <li>优化了 Slider、Switch 样式与交互，增强键盘的可访问性，更接近原生。<issue id="1647"></issue></li>
+                        <li>修复了 Slider 的 <code>step</code> 属性设置为小数时的 bug。<issue id="2984"></issue></li>
+                        <li>修复 Select 在无 Option 时，按下方向键报错的 bug。</li>
+                        <li>修复 Avatar 使用中文字符，有时不能居中的 bug。<issue id="3033"></issue></li>
+                        <li>修复 Carousel 在没有使用 <code>v-model</code> 时，指示器不更新的 bug。<issue id="3038"></issue></li>
+                        <li>修复 Input 在 <code>size="small"</code> 且使用 <code>prepend</code> 或 <code>append</code> 时，样式不正确的 bug。<issue id="3089"></issue></li>
+                        <li>新增希腊语。<mention id="d4rth0nyx"></mention></li>
+                        <li>优化繁体中文。</li>
+                        <li>修复罗马尼亚语文件错误的问题。<issue id="3060"></issue></li>
+                        <blockquote>特别感谢 <mention id="SergioCrisostomo"></mention> 和 <mention id="Xotic750"></mention> 的贡献！</blockquote>
+                    </ul>
+                </Timeline-item>
+                <Timeline-item>
                     <Anchor title="2.9.2" h2></Anchor>
                     <p>
                         <code>2018-02-02</code>
