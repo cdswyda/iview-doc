@@ -20,7 +20,7 @@
         transform-origin: right bottom;
         -webkit-transform-origin: right bottom;
         padding: 2px 6px;
-        border: 1px solid #dddee1;
+        border: 1px solid #dcdee2;
         background-color: rgba(0,0,0,.2);
         color: #fff;
         border-radius: 3px;
@@ -30,12 +30,12 @@
 
         &:before{
             display: inline-block;
-            content: '广告';
+            content: '赞助商';
             cursor: pointer;
         }
         &:hover{
             &:before{
-                content: '投放广告';
+                content: '成为赞助商';
             }
         }
     }

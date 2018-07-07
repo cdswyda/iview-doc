@@ -18,9 +18,9 @@
     <i-article>
         <article>
             <h1>Tooltip 文字提示</h1>
-            <Anchor title="概述" h2></Anchor>
+            <inAnchor title="概述" h2></inAnchor>
             <p>文字提示气泡框，在鼠标悬停时显示，代替了系统的<code>title</code>提示。</p>
-            <Anchor title="代码示例" h2></Anchor>
+            <inAnchor title="代码示例" h2></inAnchor>
             <Demo title="基础用法">
                 <div slot="demo">
                     <Tooltip content="这里是提示文字">
@@ -124,12 +124,37 @@
                 </div>
                 <i-code lang="html" slot="code">{{ code.delay }}</i-code>
             </Demo>
+            <Demo title="主题">
+                <div slot="demo">
+                    <Tooltip content="content of tooltip">
+                        <Button>Dark(default)</Button>
+                    </Tooltip>
+                    <Tooltip content="content of tooltip" theme="light">
+                        <Button>Light</Button>
+                    </Tooltip>
+                </div>
+                <div slot="desc">
+                    <p>设置属性 <code>theme</code> 可以显示不同的颜色。</p>
+                </div>
+                <i-code lang="html" slot="code">{{ code.theme }}</i-code>
+            </Demo>
+            <Demo title="自动换行">
+                <div slot="demo">
+                    <Tooltip max-width="200" content="史蒂夫·乔布斯（Steve Jobs），1955年2月24日生于美国加利福尼亚州旧金山，美国发明家、企业家、美国苹果公司联合创办人。">
+                        <Button>长文本</Button>
+                    </Tooltip>
+                </div>
+                <div slot="desc">
+                    <p>设置属性 <code>max-width</code>，当超出最大值后，文本将自动换行，并两端对齐。</p>
+                </div>
+                <i-code lang="html" slot="code">{{ code.width }}</i-code>
+            </Demo>
 
             <ad></ad>
 
             <div class="api">
-                <Anchor title="API" h2></Anchor>
-                <Anchor title="Tooltip props" h3></Anchor>
+                <inAnchor title="API" h2></inAnchor>
+                <inAnchor title="Tooltip props" h3></inAnchor>
                 <table>
                     <thead>
                         <tr>
@@ -148,7 +173,7 @@
                         </tr>
                         <tr>
                             <td>placement</td>
-                            <td>提示框出现的位置，可选值为<code>top</code><code>top-start</code><code>top-end</code><code>bottom</code><code>bottom-start</code><code>bottom-end</code><code>left</code><code>left-start</code><code>left-end</code><code>right</code><code>right-start</code><code>right-end</code></td>
+                            <td>提示框出现的位置，可选值为<code>top</code><code>top-start</code><code>top-end</code><code>bottom</code><code>bottom-start</code><code>bottom-end</code><code>left</code><code>left-start</code><code>left-end</code><code>right</code><code>right-start</code><code>right-end</code>，2.12.0 版本开始支持自动识别</td>
                             <td>String</td>
                             <td>bottom</td>
                         </tr>
@@ -171,14 +196,40 @@
                             <td>false</td>
                         </tr>
                         <tr>
+                            <td>theme</td>
+                            <td>主题，可选值为 dark 或 light</td>
+                            <td>String</td>
+                            <td>dark</td>
+                        </tr>
+                        <tr>
+                            <td>max-width</td>
+                            <td>最大宽度，超出最大值后，文本将自动换行，并两端对齐</td>
+                            <td>String | Number</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>offset</td>
+                            <td>出现位置的偏移量</td>
+                            <td>Number</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
                             <td>transfer</td>
                             <td>是否将弹层放置于 body 内，在 Tabs、带有 fixed 的 Table 列内使用时，建议添加此属性，它将不受父级样式影响，从而达到更好的效果</td>
                             <td>Boolean</td>
                             <td>false</td>
                         </tr>
+                        <tr>
+                            <td>options</td>
+                            <td>自定义 popper.js 的配置项，具体配置见 <a href="https://popper.js.org/popper-documentation.html" target="_blank">popper.js 文档</a></td>
+                            <td>Object</td>
+                            <td>
+                                <i-code lang="js">{{ code.options }}</i-code>
+                            </td>
+                        </tr>
                     </tbody>
                 </table>
-                <Anchor title="Tooltip events" h3></Anchor>
+                <inAnchor title="Tooltip events" h3></inAnchor>
                 <table>
                     <thead>
                         <tr>
@@ -200,7 +251,7 @@
                         </tr>
                     </tbody>
                 </table>
-                <Anchor title="Tooltip slot" h3></Anchor>
+                <inAnchor title="Tooltip slot" h3></inAnchor>
                 <table>
                     <thead>
                         <tr>
@@ -228,14 +279,14 @@
     import iCode from 'iCode';
     import Demo from '../../components/demo.vue';
     import Code from '../../code/tooltip';
-    import Anchor from '../../components/anchor.vue';
+    import inAnchor from '../../components/anchor.vue';
 
     export default {
         components: {
             iArticle,
             iCode,
             Demo,
-            Anchor
+            inAnchor
         },
         data () {
             return {

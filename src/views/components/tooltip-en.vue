@@ -18,15 +18,15 @@
     <i-article>
         <article>
             <h1>Tooltip</h1>
-            <Anchor title="Brief Introduction" h2></Anchor>
+            <inAnchor title="Brief Introduction" h2></inAnchor>
             <p>A simple text popup tip.</p>
             <p>The tip shows while mouse enter, and hides while mouse leave. The Tooltip doesn't support complex text and operation.</p>
             <p>It can provide an explanation of button/text/operation that can cover the usage of the default system <code>title</code>.</p>
-            <Anchor title="Examples" h2></Anchor>
+            <inAnchor title="Examples" h2></inAnchor>
             <Demo title="Basic Usage">
                 <div slot="demo">
-                    <Tooltip content="这里是提示文字">
-                        当鼠标经过这段文字时，会显示一个气泡框
+                    <Tooltip content="Here is the prompt text">
+                        A balloon appears when the mouse passes over this text
                     </Tooltip>
                 </div>
                 <div slot="desc">
@@ -38,49 +38,49 @@
             <Demo title="Placement">
                 <div slot="demo">
                     <div class="top">
-                        <Tooltip content="Top Left 文字提示" placement="top-start">
-                            <Button>上左</Button>
+                        <Tooltip content="Top Left text" placement="top-start">
+                            <Button>Top Left</Button>
                         </Tooltip>
-                        <Tooltip content="Top Center 文字提示" placement="top">
-                            <Button>上边</Button>
+                        <Tooltip content="Top Center text" placement="top">
+                            <Button>Top Center</Button>
                         </Tooltip>
-                        <Tooltip content="Top Right 文字提示" placement="top-end">
-                            <Button>上右</Button>
+                        <Tooltip content="Top Right text" placement="top-end">
+                            <Button>Top Right</Button>
                         </Tooltip>
                     </div>
                     <div class="center">
                         <div class="center-left">
-                            <Tooltip content="Left Top 文字提示" placement="left-start">
-                                <Button>左上</Button>
+                            <Tooltip content="Left Top text" placement="left-start">
+                                <Button>Left Top</Button>
                             </Tooltip><br><br>
-                            <Tooltip content="Left Center 文字提示" placement="left">
-                                <Button>左边</Button>
+                            <Tooltip content="Left Center text" placement="left">
+                                <Button>Left Center</Button>
                             </Tooltip><br><br>
-                            <Tooltip content="Left Bottom 文字提示" placement="left-end">
-                                <Button>左下</Button>
+                            <Tooltip content="Left Bottom text" placement="left-end">
+                                <Button>Left Bottom</Button>
                             </Tooltip>
                         </div>
                         <div class="center-right">
-                            <Tooltip content="Right Top 文字提示" placement="right-start">
-                                <Button>右上</Button>
+                            <Tooltip content="Right Top text" placement="right-start">
+                                <Button>Right Top</Button>
                             </Tooltip><br><br>
-                            <Tooltip content="Right Center 文字提示" placement="right">
-                                <Button>右边</Button>
+                            <Tooltip content="Right Center text" placement="right">
+                                <Button>Right Center</Button>
                             </Tooltip><br><br>
-                            <Tooltip content="Right Bottom 文字提示" placement="right-end">
-                                <Button>右下</Button>
+                            <Tooltip content="Right Bottom text" placement="right-end">
+                                <Button>Right Bottom</Button>
                             </Tooltip>
                         </div>
                     </div>
                     <div class="bottom">
-                        <Tooltip content="Bottom Left 文字提示" placement="bottom-start">
-                            <Button>下左</Button>
+                        <Tooltip content="Bottom Left text" placement="bottom-start">
+                            <Button>Bottom Left</Button>
                         </Tooltip>
-                        <Tooltip content="Bottom Center 文字提示" placement="bottom">
-                            <Button>下边</Button>
+                        <Tooltip content="Bottom Center text" placement="bottom">
+                            <Button>Bottom Center</Button>
                         </Tooltip>
-                        <Tooltip content="Bottom Right 文字提示" placement="bottom-end">
-                            <Button>下右</Button>
+                        <Tooltip content="Bottom Right text" placement="bottom-end">
+                            <Button>Bottom Right</Button>
                         </Tooltip>
                     </div>
                 </div>
@@ -92,10 +92,10 @@
             <Demo title="Custom">
                 <div slot="demo">
                     <Tooltip placement="top">
-                        <Button>多行</Button>
+                        <Button>Multiple lines</Button>
                         <div slot="content">
-                            <p>显示多行信息</p>
-                            <p><i>可以自定义样式</i></p>
+                            <p>Display multiple lines of information</p>
+                            <p><i>Can customize the style</i></p>
                         </div>
                     </Tooltip>
                 </div>
@@ -106,8 +106,8 @@
             </Demo>
             <Demo title="Disabled">
                 <div slot="demo">
-                    <Tooltip placement="top" content="可以禁用文字提示" :disabled="disabled">
-                        <Button @click="disabled = true">点击关闭提示</Button>
+                    <Tooltip placement="top" content="Can disable text prompts" :disabled="disabled">
+                        <Button @click="disabled = true">Click to close</Button>
                     </Tooltip>
                 </div>
                 <div slot="desc">
@@ -117,8 +117,8 @@
             </Demo>
             <Demo title="Delay">
                 <div slot="demo">
-                    <Tooltip placement="top" content="Tooltip 文字提示" :delay="1000">
-                        <Button @click="disabled = true">延时1秒显示</Button>
+                    <Tooltip placement="top" content="Tooltip text" :delay="1000">
+                        <Button @click="disabled = true">Delay 1 second to show</Button>
                     </Tooltip>
                 </div>
                 <div slot="desc">
@@ -126,12 +126,37 @@
                 </div>
                 <i-code lang="html" slot="code">{{ code.delay }}</i-code>
             </Demo>
+            <Demo title="Theme">
+                <div slot="demo">
+                    <Tooltip content="content of tooltip">
+                        <Button>Dark(default)</Button>
+                    </Tooltip>
+                    <Tooltip content="content of tooltip" theme="light">
+                        <Button>Light</Button>
+                    </Tooltip>
+                </div>
+                <div slot="desc">
+                    <p>Setting the property <code>theme</code> can display different colors.</p>
+                </div>
+                <i-code lang="html" slot="code">{{ code.theme }}</i-code>
+            </Demo>
+            <Demo title="Automatic Wrap">
+                <div slot="demo">
+                    <Tooltip max-width="200" content="Steven Paul Jobs was an American entrepreneur and business magnate. He was the chairman, chief executive officer, and a co-founder of Apple Inc.">
+                        <Button>Long Content</Button>
+                    </Tooltip>
+                </div>
+                <div slot="desc">
+                    <p>Set the property <code>max-width</code>, when the maximum value is exceeded, the text will automatically wrap and be aligned.</p>
+                </div>
+                <i-code lang="html" slot="code">{{ code.width }}</i-code>
+            </Demo>
 
             <ad></ad>
 
             <div class="api">
-                <Anchor title="API" h2></Anchor>
-                <Anchor title="Tooltip props" h3></Anchor>
+                <inAnchor title="API" h2></inAnchor>
+                <inAnchor title="Tooltip props" h3></inAnchor>
                 <table>
                     <thead>
                         <tr>
@@ -150,7 +175,7 @@
                         </tr>
                         <tr>
                             <td>placement</td>
-                            <td>To set the position, which can be one of <code>top</code><code>top-start</code><code>top-end</code><code>bottom</code><code>bottom-start</code><code>bottom-end</code><code>left</code><code>left-start</code><code>left-end</code><code>right</code><code>right-start</code><code>right-end</code>.</td>
+                            <td>To set the position, which can be one of <code>top</code><code>top-start</code><code>top-end</code><code>bottom</code><code>bottom-start</code><code>bottom-end</code><code>left</code><code>left-start</code><code>left-end</code><code>right</code><code>right-start</code><code>right-end</code>, supports automatic recognition after 2.12.0</td>
                             <td>String</td>
                             <td>bottom</td>
                         </tr>
@@ -173,14 +198,40 @@
                             <td>false</td>
                         </tr>
                         <tr>
+                            <td>theme</td>
+                            <td>Theme, optional dark or light.</td>
+                            <td>String</td>
+                            <td>dark</td>
+                        </tr>
+                        <tr>
+                            <td>max-width</td>
+                            <td>Maximum width, after the maximum value is exceeded, the text will automatically wrap and be aligned.</td>
+                            <td>String | Number</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>offset</td>
+                            <td>Popover offset.</td>
+                            <td>Number</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
                             <td>transfer</td>
                             <td>Whether to append the layer in body. When used in Tabs or a fixed Table column, suggests adding this property, it will not be affected by the parent style, resulting in better results.</td>
                             <td>Boolean</td>
                             <td>false</td>
                         </tr>
+                        <tr>
+                            <td>options</td>
+                            <td>Customize popper.js configuration items. For details, see <a href="https://popper.js.org/popper-documentation.html" target="_blank">popper.js document</a>.</td>
+                            <td>Object</td>
+                            <td>
+                                <i-code lang="js">{{ code.options }}</i-code>
+                            </td>
+                        </tr>
                     </tbody>
                 </table>
-                <Anchor title="Tooltip events" h3></Anchor>
+                <inAnchor title="Tooltip events" h3></inAnchor>
                 <table>
                     <thead>
                         <tr>
@@ -202,7 +253,7 @@
                         </tr>
                     </tbody>
                 </table>
-                <Anchor title="Tooltip slot" h3></Anchor>
+                <inAnchor title="Tooltip slot" h3></inAnchor>
                 <table>
                     <thead>
                         <tr>
@@ -230,14 +281,14 @@
     import iCode from 'iCode';
     import Demo from '../../components/demo.vue';
     import Code from '../../code/tooltip';
-    import Anchor from '../../components/anchor.vue';
+    import inAnchor from '../../components/anchor.vue';
 
     export default {
         components: {
             iArticle,
             iCode,
             Demo,
-            Anchor
+            inAnchor
         },
         data () {
             return {

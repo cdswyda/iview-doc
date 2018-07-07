@@ -2,9 +2,9 @@
     <i-article>
         <article>
             <h1>ColorPicker 颜色选择器</h1>
-            <Anchor title="概述" h2></Anchor>
+            <inAnchor title="概述" h2></inAnchor>
             <p>用于颜色选择，支持多种颜色格式，支持颜色预设。</p>
-            <Anchor title="代码示例" h2></Anchor>
+            <inAnchor title="代码示例" h2></inAnchor>
             <Demo title="基础用法">
                 <div slot="demo">
                     <Row>
@@ -80,8 +80,8 @@
             <ad></ad>
 
             <div class="api">
-                <Anchor title="API" h2></Anchor>
-                <Anchor title="ColorPicker props" h3></Anchor>
+                <inAnchor title="API" h2></inAnchor>
+                <inAnchor title="ColorPicker props" h3></inAnchor>
                 <table>
                     <thead>
                         <tr>
@@ -97,6 +97,12 @@
                             <td>绑定的值，可使用 v-model 双向绑定</td>
                             <td>String</td>
                             <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>disabled</td>
+                            <td>是否禁用</td>
+                            <td>Boolean</td>
+                            <td>false</td>
                         </tr>
                         <tr>
                             <td>alpha</td>
@@ -136,7 +142,7 @@
                         </tr>
                     </tbody>
                 </table>
-                <Anchor title="ColorPicker events" h3></Anchor>
+                <inAnchor title="ColorPicker events" h3></inAnchor>
                 <table>
                     <thead>
                         <tr>
@@ -156,6 +162,11 @@
                             <td>面板中当前显示的颜色发生改变时触发</td>
                             <td>当前显示的颜色值</td>
                         </tr>
+                        <tr>
+                            <td>on-open-change</td>
+                            <td>下拉框展开或收起时触发</td>
+                            <td>true / false</td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
@@ -167,14 +178,14 @@
     import iCode from 'iCode';
     import Demo from '../../components/demo.vue';
     import Code from '../../code/color-picker';
-    import Anchor from '../../components/anchor.vue';
+    import inAnchor from '../../components/anchor.vue';
 
     export default {
         components: {
             iArticle,
             iCode,
             Demo,
-            Anchor
+            inAnchor
         },
         data () {
             return {

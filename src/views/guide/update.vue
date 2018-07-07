@@ -25,10 +25,153 @@
         <article class="doc-update">
             <Timeline pending>
                 <Timeline-item>
+                    <inAnchor title="2.14.3" h2></inAnchor>
+                    <p>
+                        <code>2018-06-20</code>
+                    </p>
+                    <ul>
+                        <li>修复 Select 在输入数字时，有时无法直接选择的 bug。<issue id="3872"></issue></li>
+                    </ul>
+                </Timeline-item>
+                <Timeline-item>
+                    <inAnchor title="2.14.2" h2></inAnchor>
+                    <p>
+                        <code>2018-06-08</code>
+                    </p>
+                    <ul>
+                        <li>修复 Select 在异步设置 Option 时，无法显示选中项的 bug。<issue id="3722"></issue></li>
+                        <li>修复 Select 在异步赋值时，无法显示选中项的 bug。<issue id="3795"></issue></li>
+                        <li>修复 Select 在 filterable 且 remote 模式下，设置 label 不显示及报错的 bug。<issue id="3817"></issue></li>
+                        <li>修复 Select 在 filterable 模式下，异步赋值，下拉列表不正确的 bug。<issue id="3836"></issue></li>
+                        <li>修复 DatePicker 在 confirm 模式下报错的 bug。<issue id="3769"></issue></li>
+                        <li>修复 DatePicker 在 range 模式下，有时右侧面板日期不正确的 bug。<issue id="3773"></issue></li>
+                        <li>修复 Menu 在 accordion 模式下，有时出错的 bug。<issue id="3803"></issue></li>
+                        <li>优化 Modal 遮罩层点击的逻辑。<issue id="3792"></issue></li>
+                    </ul>
+                </Timeline-item>
+                <Timeline-item>
+                    <inAnchor title="2.14.1" h2></inAnchor>
+                    <p>
+                        <code>2018-06-01</code>
+                    </p>
+                    <ul>
+                        <li>修复 2.14.0 版本中，在 SSR 中无法使用的 bug。<issue id="3740"></issue></li>
+                        <li>修复 2.14.0 版本中，Select 无法绑定数字 0 的 bug。<issue id="3696"></issue></li>
+                        <li>修复 2.14.0 版本中，Select 有时会显示 undefined 的 bug。<issue id="3705"></issue></li>
+                        <li>修复 2.14.0 版本中，Select 初次渲染会触发 @on-change 事件的 bug。<issue id="3725"></issue></li>
+                        <li>修复 2.14.0 版本中，Select 显示 label 不正确的 bug。<issue id="3728"></issue> <issue id="3742"></issue></li>
+                        <li>修复 2.14.0 版本中，Select 在 filterable 且 clearable 模式下，清空列表未还原的 bug。<issue id="3746"></issue></li>
+                        <li>修复 2.14.0 版本中，Select 在开启 transfer 时无法使用的 bug。<issue id="3695"></issue></li>
+                        <li>修复 2.14.0 版本中，Select 无法在移动设备使用的 bug。<issue id="3741"></issue></li>
+                        <li>修复 2.14.0 版本中，Select 无法绑定值为对象的 bug。<issue id="3737"></issue></li>
+                        <li>修复 2.14.0 版本中，AutoComplete 有时无法正常收起的 bug。<issue id="3709"></issue></li>
+                        <li>修复 2.14.0 版本中，Tabs 内的表单控件不会自动获得焦点，除非开启属性 <code>capture-focus</code>。<issue id="3732"></issue></li>
+                        <li>修复 2.14.0 版本中，横向 Menu 有时展开子菜单错位的 bug。<issue id="3733"></issue></li>
+                    </ul>
+                </Timeline-item>
+                <Timeline-item>
+                    <inAnchor title="2.14.0 KAMI" h2></inAnchor>
+                    <p>
+                        <code>2018-05-24</code>
+                    </p>
+                    <ul>
+                        <li>重构 Select 组件，完全支持键盘可访问性，并修复若干问题。<issue id="3157"></issue> <issue id="1647"></issue> <issue id="3574"></issue></li>
+                        <li>DatePicker 组件增强键盘的可访问性。<issue id="3643"></issue> <issue id="1647"></issue></li>
+                        <li>ColorPicker 组件增强键盘的可访问性。<issue id="3662"></issue> <issue id="1647"></issue></li>
+                        <li>Tabs 组件增强键盘的可访问性。<issue id="3642"></issue> <issue id="1647"></issue></li>
+                        <li>TabPane 将 <code>display: none</code> 改为了 <code>visibility: hidden</code>。<issue id="3652"></issue></li>
+                        <li>ColorPicker 新增属性 <code>disabled</code>。<issue id="3662"></issue></li>
+                        <li>Select 新增事件 <code>@on-clear</code> 和 <code>@on-open-change</code>。<issue id="3579"></issue></li>
+                        <li>Rate 新增属性 <code>clearable</code>。<issue id="3487"></issue></li>
+                        <li>ColorPicker 新增事件 <code>@on-open-change</code>。<issue id="3540"></issue></li>
+                        <li>AutoComplete 新增事件 <code>@on-focus</code> 和 <code>@on-blur</code>。<issue id="3565"></issue></li>
+                        <li>Icon 新增事件 <code>@click</code>。<issue id="3621"></issue></li>
+                        <li>Menu 在手风琴模式下，关闭父菜单，其子菜单也会关闭。<issue id="3617"></issue></li>
+                        <li>优化 popper.js 的配置。</li>
+                        <li>修复 Slider 有时无法拖拽的 bug。<issue id="3468"></issue></li>
+                        <li>修复 Grid 嵌套多层 Row 时，gutter 受父级影响的问题。<issue id="3596"></issue></li>
+                        <li>修复 DatePicker 在 <code>type="datetimerange"</code> 且开启 show-week-numbers 时，错位的 bug。<issue id="3629"></issue></li>
+                        <li>修复 DatePicker 在 multiple 模式下，使用 v-model 报错的 bug。<issue id="3675"></issue></li>
+                        <li>修复 RadioGroup 无法直接使用 value 的 bug。<issue id="3498"></issue></li>
+                        <li>修复 RadioGroup 有时内容不居中的问题。<issue id="3586"></issue></li>
+                        <li>修复 $Spin 直接调用 .hide() 方法，有时报错的 bug。<issue id="3535"></issue></li>
+                        <li>修复 AutoComplete 事件 <code>@on-change</code> 只触发一次的 bug。<issue id="3486"></issue></li>
+                        <li>修复 AutoComplete 内容溢出，点击横向滚动条时，关闭弹层的 bug。<issue id="3590"></issue></li>
+                        <li>修复 Notice 类名错误的 bug。<issue id="3551"></issue></li>
+                        <li>修复 Menu 事件 @on-open-change 返回值不正确的 bug。<issue id="3575"></issue></li>
+                        <li>修复 InputNumber 设置 precision 时，清空数据报错的 bug。<issue id="3676"></issue></li>
+                        <li>新增捷克语。<mention id="ajkl2533"></mention></li>
+                    </ul>
+                </Timeline-item>
+                <Timeline-item>
+                    <inAnchor title="2.13.1" h2></inAnchor>
+                    <p>
+                        <code>2018-04-23</code>
+                    </p>
+                    <ul>
+                        <li>Tag 新增属性 <code>fade</code>。</li>
+                        <li>InputNumber 新增属性 <code>placeholder</code>。<issue id="3424"></issue></li>
+                        <li>InputNumber 的事件 <code>on-focus</code> 增加返回值 event。<issue id="3395"></issue></li>
+                        <li>DatePicker 的事件 <code>on-change</code> 增加返回值 type。<issue id="3353"></issue></li>
+                        <li>优化 popper.js 的配置及 dropdown 的展开动画。<issue id="3354"></issue></li>
+                        <li>修复 Table 在动态调整页面宽度，有时滚动条显示错误的 bug。<issue id="3358"></issue></li>
+                        <li>修复 Poptip / Tooltip 动态修改内容后，位置计算不准确的 bug。<issue id="3412"></issue></li>
+                        <li>修复在 Form 内使用 Carousel 时，点击按钮会跳转的问题。<issue id="3426"></issue></li>
+                    </ul>
+                </Timeline-item>
+                <Timeline-item>
+                    <inAnchor title="2.13.0 King of Opera" h2></inAnchor>
+                    <p>
+                        <code>2018-04-11</code>
+                    </p>
+                    <ul>
+                        <li>Table 列新增属性 <code>minWidth</code> 和 <code>maxWidth</code>。<issue id="3284"></issue></li>
+                        <li>DatePicker 的 <code>disabledDate</code> 功能，现在也能限制时、分、秒了。<issue id="3246"></issue></li>
+                        <li>优化 Table 筛选样式。<issue id="3206"></issue></li>
+                        <li>修复 Table 在多级表头里使用过滤和排序的 bug。<issue id="3339"></issue></li>
+                        <li>修复 Table 在 2.12.0 版本，设置 <code>show-header="false"</code> 报错的 bug。</li>
+                        <li>修复 Poptip 和 Tooltip 有时方向识别错误的 bug，并支持自定义 popper.js 的 options 选项。</li>
+                        <li>修复 DatePicker 在 daterange 模式下，选择年、月后显示值不正确的 bug。<issue id="3345"></issue></li>
+                        <li>修复 DatePicker 在 Safari 浏览器下 <code>on-change</code> 事件返回值有时不正确的 bug。<issue id="3232"></issue></li>
+                        <li>修复 DatePicker 的 <code>show-week-numbers</code> 无法动态设置的 bug。<issue id="3277"></issue></li>
+                    </ul>
+                </Timeline-item>
+                <Timeline-item>
+                    <inAnchor title="2.12.0 Human Resource Machine" h2></inAnchor>
+                    <p>
+                        <code>2018-04-04</code>
+                    </p>
+                    <ul>
+                        <li>Select、AutoComplete、DatePicker、TimePicker、ColorPicker、Cascader、Dropdown 等组件支持自动识别浮层展开方向。<issue id="3156"></issue></li>
+                        <li>Table 支持表头分组。</li>
+                        <li>InputNumber 的值可以删除或设置为 null。<issue id="3174"></issue></li>
+                        <li>Card 新增属性 <code>title</code> 和 <code>icon</code>，可以更简单地设置头部。</li>
+                        <li>Tree 新增属性 <code>children-key</code>。</li>
+                        <li>Slider 新增属性 <code>input-size</code>。<issue id="3301"></issue></li>
+                        <li>Poptip 新增属性 <code>popper-class</code>。</li>
+                        <li>优化 Input 在 clearable 模式下，无数据时不显示清空按钮。</li>
+                        <li>优化 Table 筛选、排序样式。</li>
+                        <li>修复 Table 在同时固定表头和列时，不显示垂直滚动条的 bug。<issue id="3178"></issue></li>
+                        <li>修复 Table 固定列无法滚动的 bug。<issue id="2871"></issue></li>
+                        <li>修复 Table 有时表头溢出的 bug。<issue id="3178"></issue></li>
+                        <li>修复 Table 表头过长，有时导致滚动条溢出的 bug。<issue id="3178"></issue></li>
+                        <li>修复 TimePicker 设置初始输入为空数组时，报错的 bug。<issue id="3161"></issue></li>
+                        <li>修复 DatePicker 在选范围时，点击切换下一年按钮时，逻辑不正确的 bug。<issue id="3158"></issue></li>
+                        <li>修复 Sider 无法正确使用 <code>v-model</code> 的 bug。<issue id="3186"></issue></li>
+                        <li>修复 Slider 设置 step 为小数，有时无法拖动到最大值的 bug。<issue id="3195"></issue></li>
+                        <li>修复 Slider 首次点击滑条，无法触发 on-change 事件的 bug。<issue id="3291"></issue></li>
+                        <li>修复 Menu 在 accordion 模式下，事件 on-open-change 返回错误值的 bug。<issue id="3298"></issue></li>
+                        <li>修复 Select 中 Option 过长，样式不正确的 bug。<issue id="2931"></issue></li>
+                        <li>修复 Select 点击过快，错位的 bug。</li>
+                        <li>修复 FormItem 在 slot 内时，有时无法正确获取到 Form 的 bug。</li>
+                        <blockquote>特别感谢 <mention id="huanghong1125">@huanghong1125</mention> 的贡献！</blockquote>
+                    </ul>
+                </Timeline-item>
+                <Timeline-item>
                     <Icon type="planet" size="18" slot="dot"></Icon>
-                    <Anchor title="2.11.0 Alto's Odyssey" h2>
+                    <inAnchor title="2.11.0 Alto's Odyssey" h2>
                         <span class="doc-update-important">悼念史蒂芬·霍金</span>
-                    </Anchor>
+                    </inAnchor>
                     <p>
                         <code>2018-03-14</code>
                     </p>
@@ -46,7 +189,7 @@
                     </ul>
                 </Timeline-item>
                 <Timeline-item>
-                    <Anchor title="2.10.1" h2></Anchor>
+                    <inAnchor title="2.10.1" h2></inAnchor>
                     <p>
                         <code>2018-03-09</code>
                     </p>
@@ -55,7 +198,7 @@
                     </ul>
                 </Timeline-item>
                 <Timeline-item>
-                    <Anchor title="2.10.0 Reigns" h2></Anchor>
+                    <inAnchor title="2.10.0 Reigns" h2></inAnchor>
                     <p>
                         <code>2018-03-09</code>
                     </p>
@@ -88,7 +231,7 @@
                     </ul>
                 </Timeline-item>
                 <Timeline-item>
-                    <Anchor title="2.9.2" h2></Anchor>
+                    <inAnchor title="2.9.2" h2></inAnchor>
                     <p>
                         <code>2018-02-02</code>
                     </p>
@@ -97,7 +240,7 @@
                     </ul>
                 </Timeline-item>
                 <Timeline-item>
-                    <Anchor title="2.9.1" h2></Anchor>
+                    <inAnchor title="2.9.1" h2></inAnchor>
                     <p>
                         <code>2018-01-30</code>
                     </p>
@@ -107,7 +250,7 @@
                     </ul>
                 </Timeline-item>
                 <Timeline-item>
-                    <Anchor title="2.9.0 Agent A" h2></Anchor>
+                    <inAnchor title="2.9.0 Agent A" h2></inAnchor>
                     <p>
                         <code>2018-01-24</code>
                     </p>
@@ -138,9 +281,9 @@
                 </Timeline-item>
                 <Timeline-item>
                     <Icon type="ios-snowy" class="ivu-load-loop doc-update-loop" style="font-size: 32px;color: rgb(220,50,51)" slot="dot"></Icon>
-                    <Anchor title="2.8.0 Oceanhorn" h2>
+                    <inAnchor title="2.8.0 Oceanhorn" h2>
                         <span class="doc-update-important">Merry Christmas</span>
-                    </Anchor>
+                    </inAnchor>
                     <p>
                         <code>2017-12-25</code>
                     </p>
@@ -156,7 +299,7 @@
                     </ul>
                 </Timeline-item>
                 <Timeline-item>
-                    <Anchor title="2.7.4" h2></Anchor>
+                    <inAnchor title="2.7.4" h2></inAnchor>
                     <p>
                         <code>2017-12-01</code>
                     </p>
@@ -168,7 +311,7 @@
                     </ul>
                 </Timeline-item>
                 <Timeline-item>
-                    <Anchor title="2.7.3" h2></Anchor>
+                    <inAnchor title="2.7.3" h2></inAnchor>
                     <p>
                         <code>2017-11-16</code>
                     </p>
@@ -179,7 +322,7 @@
                     </ul>
                 </Timeline-item>
                 <Timeline-item>
-                    <Anchor title="2.7.2" h2></Anchor>
+                    <inAnchor title="2.7.2" h2></inAnchor>
                     <p>
                         <code>2017-11-14</code>
                     </p>
@@ -188,7 +331,7 @@
                     </ul>
                 </Timeline-item>
                 <Timeline-item>
-                    <Anchor title="2.7.1" h2></Anchor>
+                    <inAnchor title="2.7.1" h2></inAnchor>
                     <p>
                         <code>2017-11-14</code>
                     </p>
@@ -197,7 +340,7 @@
                     </ul>
                 </Timeline-item>
                 <Timeline-item>
-                    <Anchor title="2.7.0 Lara Croft GO" h2></Anchor>
+                    <inAnchor title="2.7.0 Lara Croft GO" h2></inAnchor>
                     <p>
                         <code>2017-11-13</code>
                     </p>
@@ -224,7 +367,7 @@
                     </ul>
                 </Timeline-item>
                 <Timeline-item>
-                    <Anchor title="2.6.0 FRAMED" h2></Anchor>
+                    <inAnchor title="2.6.0 FRAMED" h2></inAnchor>
                     <p>
                         <code>2017-10-26</code>
                     </p>
@@ -246,7 +389,7 @@
                     </ul>
                 </Timeline-item>
                 <Timeline-item>
-                    <Anchor title="2.5.1" h2></Anchor>
+                    <inAnchor title="2.5.1" h2></inAnchor>
                     <p>
                         <code>2017-10-18</code>
                     </p>
@@ -255,7 +398,7 @@
                     </ul>
                 </Timeline-item>
                 <Timeline-item>
-                    <Anchor title="2.5.0 Old Man’s Journey" h2></Anchor>
+                    <inAnchor title="2.5.0 Old Man’s Journey" h2></inAnchor>
                     <p>
                         <code>2017-10-17</code>
                     </p>
@@ -275,7 +418,7 @@
                     </ul>
                 </Timeline-item>
                 <Timeline-item>
-                    <Anchor title="2.4.0 Monument" h2></Anchor>
+                    <inAnchor title="2.4.0 Monument" h2></inAnchor>
                     <p>
                         <code>2017-09-25</code>
                     </p>
@@ -301,7 +444,7 @@
                     </ul>
                 </Timeline-item>
                 <Timeline-item>
-                    <Anchor title="2.3.1 & 2.3.2" h2></Anchor>
+                    <inAnchor title="2.3.1 & 2.3.2" h2></inAnchor>
                     <p>
                         <code>2017-09-10</code>
                     </p>
@@ -312,7 +455,7 @@
                     </ul>
                 </Timeline-item>
                 <Timeline-item>
-                    <Anchor title="2.3.0 Lumino City" h2></Anchor>
+                    <inAnchor title="2.3.0 Lumino City" h2></inAnchor>
                     <p>
                         <code>2017-09-05</code>
                     </p>
@@ -340,7 +483,7 @@
                 </Timeline-item>
                 <Timeline-item color="red">
                     <Icon type="ios-heart" size="18" slot="dot"></Icon>
-                    <Anchor title="2.2.0 Shadowmatic" h2></Anchor>
+                    <inAnchor title="2.2.0 Shadowmatic" h2></inAnchor>
                     <p>
                         <code>2017-08-28</code>
                     </p>
@@ -359,7 +502,7 @@
                     </ul>
                 </Timeline-item>
                 <Timeline-item>
-                    <Anchor title="2.1.0 Alto's Adventure" h2></Anchor>
+                    <inAnchor title="2.1.0 Alto's Adventure" h2></inAnchor>
                     <p>
                         <code>2017-08-14</code>
                     </p>
@@ -384,7 +527,7 @@
                 </Timeline-item>
                 <Timeline-item color="green">
                     <Icon type="trophy" size="18" slot="dot"></Icon>
-                    <Anchor title="2.0.0 Leo's Fortune" h2></Anchor>
+                    <inAnchor title="2.0.0 Leo's Fortune" h2></inAnchor>
                     <p>
                         <code>2017-07-28</code>
                     </p>
@@ -411,7 +554,7 @@
                     </ul>
                 </Timeline-item>
                 <Timeline-item>
-                    <Anchor title="2.0.0-rc.19" h2></Anchor>
+                    <inAnchor title="2.0.0-rc.19" h2></inAnchor>
                     <p>
                         <code>2017-07-17</code>
                     </p>
@@ -425,7 +568,7 @@
                     </ul>
                 </Timeline-item>
                 <Timeline-item>
-                    <Anchor title="2.0.0-rc.18" h2></Anchor>
+                    <inAnchor title="2.0.0-rc.18" h2></inAnchor>
                     <p>
                         <code>2017-07-03</code>
                     </p>
@@ -447,7 +590,7 @@
                     </ul>
                 </Timeline-item>
                 <Timeline-item>
-                    <Anchor title="2.0.0-rc.17" h2></Anchor>
+                    <inAnchor title="2.0.0-rc.17" h2></inAnchor>
                     <p>
                         <code>2017-06-14</code>
                     </p>
@@ -464,7 +607,7 @@
                 </Timeline-item>
                 <Timeline-item>
                     <Icon type="social-apple-outline" size="18" slot="dot"></Icon>
-                    <Anchor title="2.0.0-rc.16" h2></Anchor>
+                    <inAnchor title="2.0.0-rc.16" h2></inAnchor>
                     <p>
                         <code>2017-06-05</code>
                     </p>
@@ -482,7 +625,7 @@
                     </ul>
                 </Timeline-item>
                 <Timeline-item>
-                    <Anchor title="2.0.0-rc.15" h2></Anchor>
+                    <inAnchor title="2.0.0-rc.15" h2></inAnchor>
                     <p>
                         <code>2017-05-31</code>
                     </p>
@@ -498,7 +641,7 @@
                     </ul>
                 </Timeline-item>
                 <Timeline-item>
-                    <Anchor title="2.0.0-rc.14" h2></Anchor>
+                    <inAnchor title="2.0.0-rc.14" h2></inAnchor>
                     <p>
                         <code>2017-05-22</code>
                     </p>
@@ -514,9 +657,9 @@
                     </ul>
                 </Timeline-item>
                 <Timeline-item>
-                    <Anchor title="2.0.0-rc.13" h2>
+                    <inAnchor title="2.0.0-rc.13" h2>
                         <span class="doc-update-important">重要更新</span>
-                    </Anchor>
+                    </inAnchor>
                     <p>
                         <code>2017-05-12</code>
                     </p>
@@ -531,7 +674,7 @@
                     </ul>
                 </Timeline-item>
                 <Timeline-item>
-                    <Anchor title="2.0.0-rc.12" h2></Anchor>
+                    <inAnchor title="2.0.0-rc.12" h2></inAnchor>
                     <p>
                         <code>2017-04-28</code>
                     </p>
@@ -551,7 +694,7 @@
                     </ul>
                 </Timeline-item>
                 <Timeline-item>
-                    <Anchor title="2.0.0-rc.11" h2></Anchor>
+                    <inAnchor title="2.0.0-rc.11" h2></inAnchor>
                     <p>
                         <code>2017-04-22</code>
                     </p>
@@ -568,7 +711,7 @@
                     </ul>
                 </Timeline-item>
                 <Timeline-item>
-                    <Anchor title="2.0.0-rc.10" h2></Anchor>
+                    <inAnchor title="2.0.0-rc.10" h2></inAnchor>
                     <p>
                         <code>2017-04-10</code>
                     </p>
@@ -586,7 +729,7 @@
                     </ul>
                 </Timeline-item>
                 <Timeline-item>
-                    <Anchor title="2.0.0-rc.9" h2></Anchor>
+                    <inAnchor title="2.0.0-rc.9" h2></inAnchor>
                     <p>
                         <code>2017-04-01</code>
                     </p>
@@ -610,7 +753,7 @@
                     </ul>
                 </Timeline-item>
                 <Timeline-item>
-                    <Anchor title="2.0.0-rc.8" h2></Anchor>
+                    <inAnchor title="2.0.0-rc.8" h2></inAnchor>
                     <p>
                         <code>2017-03-29</code>
                     </p>
@@ -621,7 +764,7 @@
                     </ul>
                 </Timeline-item>
                 <Timeline-item>
-                    <Anchor title="2.0.0-rc.7" h2></Anchor>
+                    <inAnchor title="2.0.0-rc.7" h2></inAnchor>
                     <p>
                         <code>2017-03-27</code>
                     </p>
@@ -634,7 +777,7 @@
                     </ul>
                 </Timeline-item>
                 <Timeline-item>
-                    <Anchor title="2.0.0-rc.6" h2></Anchor>
+                    <inAnchor title="2.0.0-rc.6" h2></inAnchor>
                     <p>
                         <code>2017-03-22</code>
                     </p>
@@ -649,7 +792,7 @@
                     </ul>
                 </Timeline-item>
                 <Timeline-item>
-                    <Anchor title="2.0.0-rc.5" h2></Anchor>
+                    <inAnchor title="2.0.0-rc.5" h2></inAnchor>
                     <p>
                         <code>2017-03-15</code>
                     </p>
@@ -664,7 +807,7 @@
                     </ul>
                 </Timeline-item>
                 <Timeline-item>
-                    <Anchor title="2.0.0-rc.4" h2></Anchor>
+                    <inAnchor title="2.0.0-rc.4" h2></inAnchor>
                     <p>
                         <code>2017-03-14</code>
                     </p>
@@ -676,7 +819,7 @@
                     </ul>
                 </Timeline-item>
                 <Timeline-item>
-                    <Anchor title="2.0.0-rc.3" h2></Anchor>
+                    <inAnchor title="2.0.0-rc.3" h2></inAnchor>
                     <p>
                         <code>2017-03-13</code>
                     </p>
@@ -687,7 +830,7 @@
                 </Timeline-item>
                 <Timeline-item color="green">
                     <Icon type="trophy" size="18" slot="dot"></Icon>
-                    <Anchor title="2.0.0-rc.2" h2></Anchor>
+                    <inAnchor title="2.0.0-rc.2" h2></inAnchor>
                     <p>
                         <code>2017-03-10</code>
                     </p>
@@ -717,7 +860,7 @@
                     </ul>
                 </Timeline-item>
                 <Timeline-item>
-                    <Button type="ghost" size="large" @click="handleBefore">查看 1.x 版本的日志</Button>
+                    <Button size="large" @click="handleBefore">查看 1.x 版本的日志</Button>
                 </Timeline-item>
             </Timeline>
         </article>
@@ -727,7 +870,7 @@
     import iArticle from '../../components/article.vue';
     import iCode from 'iCode';
     import Code from '../../code/guide';
-    import Anchor from '../../components/anchor.vue';
+    import inAnchor from '../../components/anchor.vue';
     import issue from '../../components/issue.vue';
     import mention from '../../components/mention.vue';
 
@@ -737,7 +880,7 @@
         components: {
             iArticle,
             iCode,
-            Anchor,
+            inAnchor,
             issue,
             mention
         },

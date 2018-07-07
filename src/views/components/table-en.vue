@@ -29,11 +29,11 @@
         <i-article>
             <article>
                 <h1>Table</h1>
-                <Anchor title="Brief Introduction" h2></Anchor>
+                <inAnchor title="Brief Introduction" h2></inAnchor>
                 <p>Table is used to display a mass of structured data.</p>
                 <p>It supports sorting, filtering, paging, custom operation, exporting to csv and many other complex functions.</p>
                 <Alert show-icon style="margin-top: 16px">Attention：Use <code>i-table</code> if not under template/render mode.</Alert>
-                <Anchor title="Examples" h2></Anchor>
+                <inAnchor title="Examples" h2></inAnchor>
                 <Demo title="Basic Usage" vertical hide-code>
                     <div slot="demo">
                         <Table :columns="columns1" :data="data1"></Table>
@@ -112,7 +112,7 @@
                     <div slot="desc">
                         <p>Enable row selecting by setting <code>highlight-row</code> prop.</p>
                         <p>When a row is selected, <code>@on-current-change</code> is emitted. The event return two values: <code>currentRow</code>, <code>oldCurrentRow</code> (current selected row data, previous selected row data). You can customize operation by controlling the callback function.</p>
-                        <p>Add an object with <code>type: 'index'</code> in <code>columns</code> can apply a index column starts with 1.</p>
+                        <p>Add an object with <code>type: 'index'</code> in <code>columns</code> can apply a index column starts with 1. Use <code>indexMethod</code> can custom the index number.</p>
                         <p>Set <code>_highlight: true</code> key to data can make the item selected by default.</p>
                         <p>Call the <code>clearCurrentRow</code> method to clear the highlighted item.</p>
                     </div>
@@ -185,6 +185,17 @@
                     </div>
                     <i-code lang="html" slot="code">{{ code.expand }}</i-code>
                 </Demo>
+
+                <Demo title="Grouping table head" vertical hide-code>
+                    <div slot="demo">
+                        <Table :columns="columns11" :data="data10" border height="500"></Table>
+                    </div>
+                    <div slot="desc">
+                        <p>Set children to column to render the group header.</p>
+                    </div>
+                    <i-code lang="html" slot="code">{{ code.head }}</i-code>
+                </Demo>
+
                 <Demo title="Loading" vertical hide-code>
                     <div slot="demo">
                         <Table :loading="loading" :columns="columns1" :data="data1"></Table>
@@ -226,7 +237,7 @@
                     </div>
                     <i-code lang="html" slot="code">{{ code.csv }}</i-code>
                 </Demo>
-                <Anchor title="Advanced Examples" h2></Anchor>
+                <inAnchor title="Advanced Examples" h2></inAnchor>
                 <p>Examples above basically cover all the functions of Table. We provides some complex examples on the basis of real business scenarios:</p>
                 <Button type="primary" size="large" @click="table1 = true">Complex Table with Paging</Button>
                 <Button type="primary" size="large" @click="table2 = true">Table with Multi-cols Filter</Button>
@@ -235,8 +246,8 @@
                 <ad></ad>
 
                 <div class="api">
-                    <Anchor title="API" h2></Anchor>
-                    <Anchor title="Table props" h3></Anchor>
+                    <inAnchor title="API" h2></inAnchor>
+                    <inAnchor title="Table props" h3></inAnchor>
                     <table>
                         <thead>
                         <tr>
@@ -345,7 +356,7 @@
                         </tr>
                         </tbody>
                     </table>
-                    <Anchor title="Table events" h3></Anchor>
+                    <inAnchor title="Table events" h3></inAnchor>
                     <table>
                         <thead>
                         <tr>
@@ -451,7 +462,7 @@
                         </tr>
                         </tbody>
                     </table>
-                    <Anchor title="Table slot" h3></Anchor>
+                    <inAnchor title="Table slot" h3></inAnchor>
                     <table>
                         <thead>
                         <tr>
@@ -474,7 +485,7 @@
                         </tr>
                         </tbody>
                     </table>
-                    <Anchor title="Table methods" h3></Anchor>
+                    <inAnchor title="Table methods" h3></inAnchor>
                     <table>
                         <thead>
                         <tr>
@@ -540,7 +551,7 @@
                         </tr>
                         </tbody>
                     </table>
-                    <Anchor title="column" h3></Anchor>
+                    <inAnchor title="column" h3></inAnchor>
                     <p>One of the item in columns. It describes the column data.</p>
                     <table>
                         <thead>
@@ -577,6 +588,18 @@
                             <td>-</td>
                         </tr>
                         <tr>
+                            <td>minWidth</td>
+                            <td>Minimum column width.</td>
+                            <td>Number</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>maxWidth</td>
+                            <td>Maximum column width.</td>
+                            <td>Number</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
                             <td>align</td>
                             <td>Alignment way. Optional value: <code>left</code>, <code>right</code> or <code>center</code>.</td>
                             <td>String</td>
@@ -601,8 +624,13 @@
                             <td>false</td>
                         </tr>
                         <tr>
+                            <td>tooltip</td>
+                            <td>If this prop is set, line wrap will be disabled. The overflowing content will be displayed as ellipsis, and use Tooltip to show the full content.</td>
+                            <td>Boolean</td>
+                            <td>false</td>
+                        </tr>
+                        <tr>
                             <td>render</td>
-                            <!--<td>自定义渲染列，传入三个参数 row、column 和 index，分别指当前行数据，当前列数据，当前行索引，详见示例</td>-->
                             <td>Custom column renderer. It uses Vue's render function. It accepts two arguments:  the first is h, the second is an object including <code>row</code>, <code>column</code> and <code>index</code> (current row's data, current column's data, current index). Details on the demo above.</td>
                             <td>Function</td>
                             <td>-</td>
@@ -611,6 +639,12 @@
                             <td>renderHeader</td>
                             <td>Custom column header renderer. It uses Vue's render function. It accepts two arguments: the first is h, the second is an object including <code>column</code> and <code>index</code> (current col's data &amp; current index).</td>
                             <td>Function</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>indexMethod</td>
+                            <td>Available when type is index, custom serial number.</td>
+                            <td>Function, parameter row is the current line content.</td>
                             <td>-</td>
                         </tr>
                         <tr>
@@ -659,6 +693,12 @@
                             <td>filterRemote</td>
                             <td>Enable remote flitering.</td>
                             <td>Function</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>children</td>
+                            <td>Grouping table head.</td>
+                            <td>Array</td>
                             <td>-</td>
                         </tr>
                         </tbody>
@@ -743,7 +783,7 @@
     import iCode from 'iCode';
     import Demo from '../../components/demo.vue';
     import Code from '../../code/table';
-    import Anchor from '../../components/anchor.vue';
+    import inAnchor from '../../components/anchor.vue';
 
     import expandRow from './table-expand.vue';
     import studyRender from '../../components/study.vue';
@@ -753,7 +793,7 @@
             iArticle,
             iCode,
             Demo,
-            Anchor,
+            inAnchor,
             expandRow,
             studyRender
         },
@@ -825,7 +865,7 @@
                         key: 'status',
                         render: (h, params) => {
                             const row = params.row;
-                            const color = row.status === 1 ? 'blue' : row.status === 2 ? 'green' : 'red';
+                            const color = row.status === 1 ? 'primary' : row.status === 2 ? 'success' : 'error';
                             const text = row.status === 1 ? 'Working' : row.status === 2 ? 'Success' : 'Fail';
 
                             return h('Tag', {
@@ -1285,6 +1325,102 @@
                         key: 'address'
                     }
                 ],
+                columns11: [
+                    {
+                        title: 'Name',
+                        key: 'name',
+                        align: 'center',
+                        width: 200,
+                        fixed: 'left',
+                        filters: [
+                            {
+                                label: 'Joe',
+                                value: 1
+                            },
+                            {
+                                label: 'John',
+                                value: 2
+                            }
+                        ],
+                        filterMultiple: false,
+                        filterMethod (value, row) {
+                            if (value === 1) {
+                                return row.name === 'Joe';
+                            } else if (value === 2) {
+                                return row.name === 'John Brown';
+                            }
+                        }
+                    },
+                    {
+                        title: 'Other',
+                        align: 'center',
+                        children: [
+                            {
+                                title: 'Age',
+                                key: 'age',
+                                align: 'center',
+                                width: 200,
+                                sortable: true
+                            },
+                            {
+                                title: 'Address',
+                                align: 'center',
+                                children: [
+                                    {
+                                        title: 'Street',
+                                        key: 'street',
+                                        align: 'center',
+                                        width: 200
+                                    },
+                                    {
+                                        title: 'Block',
+                                        align: 'center',
+                                        children: [
+                                            {
+                                                title: 'Building',
+                                                key: 'building',
+                                                align: 'center',
+                                                width: 200,
+                                                sortable: true
+                                            },
+                                            {
+                                                title: 'Door No.',
+                                                key: 'door',
+                                                align: 'center',
+                                                width: 200
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        title: 'Company',
+                        align: 'center',
+                        children: [
+                            {
+                                title: 'Company Address',
+                                key: 'caddress',
+                                align: 'center',
+                                width: 200
+                            },
+                            {
+                                title: 'Company Name',
+                                key: 'cname',
+                                align: 'center',
+                                width: 200
+                            }
+                        ]
+                    },
+                    {
+                        title: 'Gender',
+                        key: 'gender',
+                        align: 'center',
+                        width: 200,
+                        fixed: 'right'
+                    }
+                ],
                 data1: [
                     {
                         name: 'John Brown',
@@ -1736,7 +1872,8 @@
                         music: 'actor'
                     }
                 ],
-                loading: true
+                loading: true,
+                data10: []
             }
         },
         computed: {
@@ -2031,6 +2168,22 @@
         },
         mounted () {
             this.changeTableColumns();
+
+            const data = [];
+            for (let i = 0; i < 20; i++) {
+                data.push({
+                    key: i,
+                    name: 'John Brown',
+                    age: i + 1,
+                    street: 'Lake Park',
+                    building: 'C',
+                    door: 2035,
+                    caddress: 'Lake Street 42',
+                    cname: 'SoftLake Co',
+                    gender: 'M',
+                });
+            }
+            this.data10 = data;
         }
     }
 </script>

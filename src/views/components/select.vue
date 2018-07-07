@@ -11,11 +11,11 @@
     <i-article>
         <article>
             <h1>Select 选择器</h1>
-            <Anchor title="概述" h2></Anchor>
+            <inAnchor title="概述" h2></inAnchor>
             <p>使用模拟的增强下拉选择器来代替浏览器原生的选择器。</p>
             <p>选择器支持单选、多选、搜索，以及键盘快捷操作。</p>
             <Alert show-icon style="margin-top: 16px">注意：非 template/render 模式下，需使用 <code>i-select</code>、<code>i-option</code>。</Alert>
-            <Anchor title="代码示例" h2></Anchor>
+            <inAnchor title="代码示例" h2></inAnchor>
             <Demo title="基础用法">
                 <div slot="demo">
                     <Select v-model="model1" style="width:200px">
@@ -188,8 +188,8 @@
             <ad></ad>
 
             <div class="api">
-                <Anchor title="API" h2></Anchor>
-                <Anchor title="Select props" h3></Anchor>
+                <inAnchor title="API" h2></inAnchor>
+                <inAnchor title="Select props" h3></inAnchor>
                 <table>
                     <thead>
                         <tr>
@@ -286,7 +286,7 @@
                         </tr>
                         <tr>
                             <td>placement</td>
-                            <td>弹窗的展开方向，可选值为 <code>bottom</code> 和 <code>top</code></td>
+                            <td>弹窗的展开方向，可选值为 <code>bottom</code> 和 <code>top</code>，2.12.0 版本开始支持自动识别</td>
                             <td>String</td>
                             <td>bottom</td>
                         </tr>
@@ -304,7 +304,7 @@
                         </tr>
                     </tbody>
                 </table>
-                <Anchor title="Select events" h3></Anchor>
+                <inAnchor title="Select events" h3></inAnchor>
                 <table>
                     <thead>
                         <tr>
@@ -324,9 +324,19 @@
                             <td>搜索词改变时触发</td>
                             <td>query</td>
                         </tr>
+                        <tr>
+                            <td>on-clear</td>
+                            <td>点击清空按钮时触发</td>
+                            <td>无</td>
+                        </tr>
+                        <tr>
+                            <td>on-open-change</td>
+                            <td>下拉框展开或收起时触发</td>
+                            <td>true / false</td>
+                        </tr>
                     </tbody>
                 </table>
-                <Anchor title="Select methods" h3></Anchor>
+                <inAnchor title="Select methods" h3></inAnchor>
                 <table>
                     <thead>
                         <tr>
@@ -348,7 +358,7 @@
                         </tr>
                     </tbody>
                 </table>
-                <Anchor title="Option props" h3></Anchor>
+                <inAnchor title="Option props" h3></inAnchor>
                 <table>
                     <thead>
                         <tr>
@@ -379,7 +389,7 @@
                         </tr>
                     </tbody>
                 </table>
-                <Anchor title="OptionGroup props" h3></Anchor>
+                <inAnchor title="OptionGroup props" h3></inAnchor>
                 <table>
                     <thead>
                         <tr>
@@ -407,14 +417,14 @@
     import iCode from 'iCode';
     import Demo from '../../components/demo.vue';
     import Code from '../../code/select';
-    import Anchor from '../../components/anchor.vue';
+    import inAnchor from '../../components/anchor.vue';
 
     export default {
         components: {
             iArticle,
             iCode,
             Demo,
-            Anchor
+            inAnchor
         },
         data () {
             return {

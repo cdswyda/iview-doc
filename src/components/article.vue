@@ -20,22 +20,26 @@
                     <i-col span="3">
                         <Affix :offset-top="75">
                             <div class="catalogue" v-show="list.length">
-                                <card dis-hover>
-                                    <div class="catalogue-title">
-                                        <template v-if="lang === 'zh-CN'">目录</template>
-                                        <template v-else>Catalogue</template>
-                                    </div>
-                                    <div class="catalogue-content">
-                                        <ul>
-                                            <li v-for="item in list">
-                                                <a :href="'#' + item.path" @click.stop.prevent="handleClickLink(item.path)">{{ item.title }}</a>
-                                            </li>
-                                            <li v-if="need_api">
-                                                <a href="#API" @click.stop.prevent="handleClickLink('API')">API</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </card>
+                                <!--<card dis-hover>-->
+                                    <!--<div class="catalogue-title">-->
+                                        <!--<template v-if="lang === 'zh-CN'">目录</template>-->
+                                        <!--<template v-else>Catalogue</template>-->
+                                    <!--</div>-->
+                                    <!--<div class="catalogue-content">-->
+                                        <!--<ul>-->
+                                            <!--<li v-for="item in list">-->
+                                                <!--<a :href="'#' + item.path" @click.stop.prevent="handleClickLink(item.path)">{{ item.title }}</a>-->
+                                            <!--</li>-->
+                                            <!--<li v-if="need_api">-->
+                                                <!--<a href="#API" @click.stop.prevent="handleClickLink('API')">API</a>-->
+                                            <!--</li>-->
+                                        <!--</ul>-->
+                                    <!--</div>-->
+                                <!--</card>-->
+                                <Anchor show-ink>
+                                    <AnchorLink v-for="item in list" :key="item.path" :href="'#' + item.path" :title="item.title" />
+                                    <AnchorLink href="#API" title="API" v-if="need_api" />
+                                </Anchor>
                             </div>
 
                             <template v-if="lang === 'zh-CN'">
@@ -49,18 +53,36 @@
                                 <!--<a v-if="ad_index === 3" href="https://cn.udacity.com/fend/?utm_source=iviewui&utm_medium=banner&utm_campaign=fend" target="_blank" @click="handleAsideAd('aside-udacity')" class="wrapper-aside wrapper-aside-no-padding">-->
                                     <!--<img src="../images/aside-udacity-3.jpg">-->
                                 <!--</a>-->
+                                <!--<a v-if="ad_index === 1" href="https://cn.udacity.com/course/wechat-mini-program&#45;&#45;nd666-cn-1/?utm_source=iviewui&utm_medium=banner&utm_campaign=wmpnd" target="_blank" @click="handleAsideAd('aside-udacity')" class="wrapper-aside wrapper-aside-no-padding">-->
+                                    <!--<img src="../images/aside-udacity-6.jpg">-->
+                                <!--</a>-->
+                                <!--<a v-if="ad_index === 2" href="https://cn.udacity.com/fend/?utm_source=iviewui&utm_medium=banner&utm_campaign=fend" target="_blank" @click="handleAsideAd('aside-udacity')" class="wrapper-aside wrapper-aside-no-padding">-->
+                                    <!--<img src="../images/aside-udacity-5.jpg">-->
+                                <!--</a>-->
+                                <a v-if="ad_index === 1" href="http://t.cn/R3dhfIj" target="_blank" @click="handleAsideAd('aside-udacity')" class="wrapper-aside wrapper-aside-no-padding">
+                                    <img src="../images/aside-u-1.png">
+                                </a>
+                                <a v-if="ad_index === 2" href="http://t.cn/R3dhfIj" target="_blank" @click="handleAsideAd('aside-udacity')" class="wrapper-aside wrapper-aside-no-padding">
+                                    <img src="../images/aside-u-2.png">
+                                </a>
+                                <a v-if="ad_index === 3" href="http://t.cn/R3dhfIj" target="_blank" @click="handleAsideAd('aside-udacity')" class="wrapper-aside wrapper-aside-no-padding">
+                                    <img src="../images/aside-u-3.png">
+                                </a>
+                                <a v-if="ad_index === 4" href="http://t.cn/R3dhfIj" target="_blank" @click="handleAsideAd('aside-udacity')" class="wrapper-aside wrapper-aside-no-padding">
+                                    <img src="../images/aside-u-4.png">
+                                </a>
+                                <a v-if="ad_index === 5" href="http://t.cn/R3dhfIj" target="_blank" @click="handleAsideAd('aside-udacity')" class="wrapper-aside wrapper-aside-no-padding">
+                                    <img src="../images/aside-u-5.png">
+                                </a>
+                                <a v-if="ad_index === 6" href="https://cn.udacity.com/fend/?utm_source=iviewui&utm_medium=banner&utm_campaign=fend" target="_blank" @click="handleAsideAd('aside-udacity')" class="wrapper-aside wrapper-aside-no-padding">
+                                    <img src="../images/aside-udacity-5.jpg">
+                                </a>
+                                <a href="https://www.bmqb.com/a/jobs?from=iview" target="_blank" @click="handleAsideAd('aside-bmqb')" class="wrapper-aside wrapper-aside-no-padding">
+                                    <img src="../images/ad-bmqb.png">
+                                </a>
                                 <!--<a href="https://segmentfault.com/ls/1650000011074057" target="_blank" @click="handleAsideAd('aside-iview-live')" class="wrapper-aside">-->
                                     <!--<img src="../images/aside-iview-live.png">-->
                                 <!--</a>-->
-                                <a v-if="ad_index === 1" href="https://cn.udacity.com/course/intro-to-python-nanodegree-foundation--nd000-cn-python/?utm_source=iviewui&utm_medium=banner&utm_campaign=python" target="_blank" @click="handleAsideAd('aside-udacity')" class="wrapper-aside wrapper-aside-no-padding">
-                                    <img src="../images/aside-udacity-4.jpg">
-                                </a>
-                                <a v-if="ad_index === 2" href="https://cn.udacity.com/fend/?utm_source=iviewui&utm_medium=banner&utm_campaign=fend" target="_blank" @click="handleAsideAd('aside-udacity')" class="wrapper-aside wrapper-aside-no-padding">
-                                    <img src="../images/aside-udacity-5.jpg">
-                                </a>
-                                <a href="https://www.mysubmail.com/sms?from=iview" target="_blank" @click="handleAsideAd('aside-submail')" class="wrapper-aside wrapper-aside-no-padding">
-                                    <img src="../images/aside-submail3.jpg">
-                                </a>
                                 <!--<div class="wrapper-aside" @click="handleAsideAd('aside-qqgroup', true)">-->
                                     <!--<img src="../images/aside-qqgroup.png">-->
                                 <!--</div>-->
@@ -75,7 +97,7 @@
                 <Row>
                     <i-col span="5">
                         <h4>
-                            <Icon type="social-github"></Icon>
+                            <Icon type="logo-github"></Icon>
                             GitHub
                         </h4>
                         <ul>
@@ -98,7 +120,7 @@
                     </i-col>
                     <i-col span="5">
                         <h4>
-                            <Icon type="link"></Icon>
+                            <Icon type="ios-link"></Icon>
                             {{ $t('index.links') }}
                         </h4>
                         <ul>
@@ -124,7 +146,7 @@
                     </i-col>
                     <i-col span="5" offset="2">
                         <h4>
-                            <Icon type="chatbubbles"></Icon>
+                            <Icon type="ios-chatbubbles"></Icon>
                             {{ $t('index.community') }}
                         </h4>
                         <ul>
@@ -171,11 +193,11 @@
                 <!--</div>-->
             <!--</div>-->
         <!--</Modal>-->
-        <Modal v-model="donate" title="与 iView 合作，有效触达技术人群" @on-ok="handleModalClose" @on-cancel="handleModalClose" width="600" class-name="vertical-center-modal">
+        <Modal v-model="donate" title="成为 iView 赞助商" @on-ok="handleModalClose" @on-cancel="handleModalClose" width="600" class-name="vertical-center-modal">
             <div class="ivu-article">
                 <p>如果您有品牌推广、活动推广、招聘推广、社区合作的需求，欢迎联系我们。</p>
                 <p>联系邮箱 <a href="mailto:admin@aresn.com">admin@aresn.com</a> 咨询。</p>
-                <p>广告位如下图所示：</p>
+                <p>位置如下图所示：</p>
                 <div>
                     <Carousel v-if="donate" v-model="adCarousel" autoplay :autoplay-speed="5000" dots="outside">
                         <CarouselItem>
@@ -221,7 +243,7 @@
         </Modal>
         <!-- todo 提问 -->
         <!--<div class="ask-question" @click="ask = true" v-if="lang === 'zh-CN'">-->
-            <!--<Icon type="ios-people" size="24"></Icon>-->
+            <!--<Icon type="ios-people" size="20"></Icon>-->
             <!--<p>QQ群</p>-->
         <!--</div>-->
     </div>
@@ -233,6 +255,7 @@
     import bus from './bus';
 
     export default {
+        inject: ['app'],
         components: {
             Navigate,
             navMenu
@@ -246,7 +269,7 @@
                 activeKey: '',
                 lang: this.$lang,
                 adCarousel: 0,
-                ad_index: 1  // 随机广告索引，更好地显示一类广告
+                ad_index: this.app.ad_index
             }
         },
         methods: {
@@ -271,7 +294,9 @@
                     '/overview',
                     '/overview-en',
                     '/docs/guide/update',
-                    '/docs/guide/update-en'
+                    '/docs/guide/update-en',
+                    '/docs/guide/global',
+                    '/docs/guide/global-en',
                 ];
 
                 const route = this.$route.path;
@@ -307,10 +332,6 @@
             this.lang = this.$lang;
         },
         mounted () {
-            // 随机广告索引
-            this.ad_index = Math.floor(Math.random () * 2 + 1);
-
-
             this.updateActiveNav();
 
             const examples = this.$slots.default[0].elm.querySelectorAll('.example');
@@ -319,10 +340,11 @@
             if (examples.length) {
                 this.need_api = true;
                 for (let i = 0; i < examples.length; i++) {
-                    const title = examples[i].querySelectorAll('header span a')[0].getAttribute('href').replace('#', '');
+                    const path = examples[i].querySelectorAll('header span a')[0].getAttribute('href').replace('#', '');
+                    const title = examples[i].querySelectorAll('header span a')[0].getAttribute('data-title').replace('#', '');
                     this.list.push({
                         title: title,
-                        path: title
+                        path: path
                     });
                 }
             } else {

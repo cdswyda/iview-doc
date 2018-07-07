@@ -30,9 +30,9 @@
     <i-article>
         <article>
             <h1>AutoComplete 自动完成</h1>
-            <Anchor title="概述" h2></Anchor>
+            <inAnchor title="概述" h2></inAnchor>
             <p>输入框自动完成功能。</p>
-            <Anchor title="代码示例" h2></Anchor>
+            <inAnchor title="代码示例" h2></inAnchor>
             <Demo title="基础用法">
                 <div slot="demo">
                     <AutoComplete
@@ -106,8 +106,8 @@
             <ad></ad>
 
             <div class="api">
-                <Anchor title="API" h2></Anchor>
-                <Anchor title="AutoComplete props" h3></Anchor>
+                <inAnchor title="API" h2></inAnchor>
+                <inAnchor title="AutoComplete props" h3></inAnchor>
                 <table>
                     <thead>
                         <tr>
@@ -168,7 +168,7 @@
                         </tr>
                         <tr>
                             <td>placement</td>
-                            <td>弹窗的展开方向，可选值为 <code>bottom</code> 和 <code>top</code></td>
+                            <td>弹窗的展开方向，可选值为 <code>bottom</code> 和 <code>top</code>，2.12.0 版本开始支持自动识别</td>
                             <td>String</td>
                             <td>bottom</td>
                         </tr>
@@ -186,7 +186,7 @@
                         </tr>
                     </tbody>
                 </table>
-                <Anchor title="AutoComplete events" h3></Anchor>
+                <inAnchor title="AutoComplete events" h3></inAnchor>
                 <table>
                     <thead>
                         <tr>
@@ -211,6 +211,16 @@
                             <td>搜索补全项的时候调用</td>
                             <td>query</td>
                         </tr>
+                        <tr>
+                            <td>on-focus</td>
+                            <td>聚焦时触发</td>
+                            <td>event</td>
+                        </tr>
+                        <tr>
+                            <td>on-blur</td>
+                            <td>失焦时触发</td>
+                            <td>event</td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
@@ -222,14 +232,14 @@
     import iCode from 'iCode';
     import Demo from '../../components/demo.vue';
     import Code from '../../code/auto-complete';
-    import Anchor from '../../components/anchor.vue';
+    import inAnchor from '../../components/anchor.vue';
 
     export default {
         components: {
             iArticle,
             iCode,
             Demo,
-            Anchor
+            inAnchor
         },
         data () {
             return {

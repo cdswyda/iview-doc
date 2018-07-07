@@ -25,10 +25,153 @@
         <article class="doc-update">
             <Timeline pending>
                 <Timeline-item>
+                    <inAnchor title="2.14.3" h2></inAnchor>
+                    <p>
+                        <code>2018-06-20</code>
+                    </p>
+                    <ul>
+                        <li>Fixed bug that Select cannot select directly when entering numbers sometimes. <issue id="3872"></issue></li>
+                    </ul>
+                </Timeline-item>
+                <Timeline-item>
+                    <inAnchor title="2.14.2" h2></inAnchor>
+                    <p>
+                        <code>2018-06-08</code>
+                    </p>
+                    <ul>
+                        <li>Fixed bug that Select can't display the selected item when the Option is set asynchronously. <issue id="3722"></issue></li>
+                        <li>Fixed bug that Select can't display the selected item when set the value asynchronously. <issue id="3795"></issue></li>
+                        <li>Fixed bug that Select can't display the label and throw errors in filterable and remote mode. <issue id="3817"></issue></li>
+                        <li>Fixed bug that Select show incorrect dropdown list when set the value asynchronously in filterable mode. <issue id="3836"></issue></li>
+                        <li>Fixed bug that DatePicker throw errors in confirm mode. <issue id="3769"></issue></li>
+                        <li>Fixed bug that DatePicker show incorrect right panel in range type sometimes. <issue id="3773"></issue></li>
+                        <li>Fixed bug about Menu in accordion mode sometimes. <issue id="3803"></issue></li>
+                        <li>Optimize the logic for Modal mask clicks. <issue id="3792"></issue></li>
+                    </ul>
+                </Timeline-item>
+                <Timeline-item>
+                    <inAnchor title="2.14.1" h2></inAnchor>
+                    <p>
+                        <code>2018-06-01</code>
+                    </p>
+                    <ul>
+                        <li>Fixed bug that not available under SSR mode in the 2.14.0 version. <issue id="3740"></issue></li>
+                        <li>Fixed bug that Select can not bind the number 0 in the 2.14.0 version. <issue id="3696"></issue></li>
+                        <li>Fixed bug that Select will show undefined sometimes in the 2.14.0 version. <issue id="3705"></issue></li>
+                        <li>Fixed bug that Select will trigger @on-change event at initialization in the 2.14.0 version. <issue id="3725"></issue></li>
+                        <li>Fixed bug that Select show incorrect label in the 2.14.0 version. <issue id="3728"></issue> <issue id="3742"></issue></li>
+                        <li>Fixed bug that Select can not show correct options when clear selected item under filterable and clearable mode in the 2.14.0 version. <issue id="3746"></issue></li>
+                        <li>Fixed bug that Select can not use under transfer mode in the 2.14.0 version. <issue id="3695"></issue></li>
+                        <li>Fixed bug that Select can not use in mobile phone in the 2.14.0 version. <issue id="3741"></issue></li>
+                        <li>Fixed bug that Select can not bind an Object in the 2.14.0 version. <issue id="3737"></issue></li>
+                        <li>Fixed bug that AutoComplete can not hide drop panel sometimes in the 2.14.0 version. <issue id="3709"></issue></li>
+                        <li>Fixed bug that form components in Tabs will be focused automatically, unless open the property <code>capture-focus</code>. <issue id="3732"></issue></li>
+                        <li>Fixed bug that transverse Menu's Submenu show incorrect position. <issue id="3733"></issue></li>
+                    </ul>
+                </Timeline-item>
+                <Timeline-item>
+                    <inAnchor title="2.14.0 KAMI" h2></inAnchor>
+                    <p>
+                        <code>2018-05-24</code>
+                    </p>
+                    <ul>
+                        <li>Refactor the Select component, fully supports keyboard accessibility and fixes several issues. <issue id="3157"></issue> <issue id="1647"></issue> <issue id="3574"></issue></li>
+                        <li>DatePicker supports keyboard accessibility. <issue id="3643"></issue> <issue id="1647"></issue></li>
+                        <li>ColorPicker supports keyboard accessibility. <issue id="3662"></issue> <issue id="1647"></issue></li>
+                        <li>Tabs supports keyboard accessibility. <issue id="3642"></issue> <issue id="1647"></issue></li>
+                        <li>TabPane changed <code>display: none</code> to <code>visibility: hidden</code>. <issue id="3652"></issue></li>
+                        <li>ColorPicker add new property <code>disabled</code>. <issue id="3662"></issue></li>
+                        <li>Select add new events <code>@on-clear</code> and <code>@on-open-change</code>. <issue id="3579"></issue></li>
+                        <li>Rate add new property <code>clearable</code>. <issue id="3487"></issue></li>
+                        <li>ColorPicker add new event <code>@on-open-change</code>. <issue id="3540"></issue></li>
+                        <li>AutoComplete add new event <code>@on-focus</code> and <code>@on-blur</code>. <issue id="3565"></issue></li>
+                        <li>Icon add new event <code>@click</code>. <issue id="3621"></issue></li>
+                        <li>Menu In accordion mode, when the parent menu is closed, its submenus are closed too. <issue id="3617"></issue></li>
+                        <li>Optimize the popper.js configuration.</li>
+                        <li>Fixed the bug that Slider can't drag sometimes. <issue id="3468"></issue></li>
+                        <li>Fixed nested Row gutter bug. <issue id="3596"></issue></li>
+                        <li>Fixed DatePicker style bug when <code>type="datetimerange"</code> and open show-week-numbers. <issue id="3629"></issue></li>
+                        <li>Fixed DatePicker bug that uses v-model in multiple mode. <issue id="3675"></issue></li>
+                        <li>Fixed RadioGroup bug that cannot use value directly. <issue id="3498"></issue></li>
+                        <li>Fixed bug that RadioGroup doesn't center content sometimes. <issue id="3586"></issue></li>
+                        <li>Fixed bug that $Spin calls the .hide() method directly. <issue id="3535"></issue></li>
+                        <li>Fixed bug that AutoComplete event <code>@on-change</code> called only once. <issue id="3486"></issue></li>
+                        <li>Fixed bug that AutoComplete can not scroll when the content is too long. <issue id="3590"></issue></li>
+                        <li>Fixed Notice bug that class name is wrong. <issue id="3551"></issue></li>
+                        <li>Fixed bug of Menu that @on-open-change event return wrong value. <issue id="3575"></issue></li>
+                        <li>Fixed bug of InputNumber when set precision property and clear value. <issue id="3676"></issue></li>
+                        <li>Add Czech. <mention id="ajkl2533"></mention></li>
+                    </ul>
+                </Timeline-item>
+                <Timeline-item>
+                    <inAnchor title="2.13.1" h2></inAnchor>
+                    <p>
+                        <code>2018-04-23</code>
+                    </p>
+                    <ul>
+                        <li>Tag add new property <code>fade</code>.</li>
+                        <li>InputNumber add new property <code>placeholder</code>. <issue id="3424"></issue></li>
+                        <li>InputNumber add new event <code>on-focus</code> and return <code>event</code>. <issue id="3395"></issue></li>
+                        <li>DatePicker event <code>on-change</code> will return a new value <code>type</code>. <issue id="3353"></issue></li>
+                        <li>Optimize the configuration of popper.js and expand animation of dropdown. <issue id="3354"></issue></li>
+                        <li>Fixed Table bug dynamically adjusts the page width, and the scroll bar shows the wrong sometimes. <issue id="3358"></issue></li>
+                        <li>Fixed inaccurate bug in position when Poptip / Tooltip modified content dynamically. <issue id="3412"></issue></li>
+                        <li>Fixed issue where clicking a button would jump when using Carousel inside a Form. <issue id="3426"></issue></li>
+                    </ul>
+                </Timeline-item>
+                <Timeline-item>
+                    <inAnchor title="2.13.0 King of Opera" h2></inAnchor>
+                    <p>
+                        <code>2018-04-11</code>
+                    </p>
+                    <ul>
+                        <li>Table column add new property <code>minWidth</code> and <code>maxWidth</code>. <issue id="3284"></issue></li>
+                        <li>DatePicker <code>disabledDate</code> function can now also limit hours, minutes, and seconds. <issue id="3246"></issue></li>
+                        <li>Optimize the Table filter style. <issue id="3206"></issue></li>
+                        <li>Fixed Table bug of using filtering and sorting in header group. <issue id="3339"></issue></li>
+                        <li>Fixed Table bug in version 2.12.0 that will throw error when set the <code>show-header="false"</code>.</li>
+                        <li>Fixed bug in Poptip and Tooltip that identify placement and you can custom options for popper.js now.</li>
+                        <li>Fixed DatePicker bug in daterange mode that show incorrect values after select year or month. <issue id="3345"></issue></li>
+                        <li>Fixed bug that DatePicker sometimes returns incorrect values in the <code>on-change</code> event of the Safari browser. <issue id="3232"></issue></li>
+                        <li>Fixed bug that DatePicker <code>show-week-numbers</code> cannot be dynamically set. <issue id="3277"></issue></li>
+                    </ul>
+                </Timeline-item>
+                <Timeline-item>
+                    <inAnchor title="2.12.0 Human Resource Machine" h2></inAnchor>
+                    <p>
+                        <code>2018-04-04</code>
+                    </p>
+                    <ul>
+                        <li>Components such as Select, AutoComplete, DatePicker, TimePicker, ColorPicker, Cascader, Dropdown, etc., support the automatic recognition of the direction in which the floating layer expands. <issue id="3156"></issue></li>
+                        <li>Table support header grouping.</li>
+                        <li>The value of InputNumber can be removed or set to null. <issue id="3174"></issue></li>
+                        <li>Card add new property <code>title</code> and <code>icon</code>, can set the head more simply.</li>
+                        <li>Tree add new property <code>children-key</code>.</li>
+                        <li>Slider add new property <code>input-size</code>. <issue id="3301"></issue></li>
+                        <li>Poptip add new property <code>popper-class</code>.</li>
+                        <li>Optimized Input In the clearable mode, the clear button is not displayed when value is empty.</li>
+                        <li>Optimize Table filtering and sorting styles.</li>
+                        <li>Fixed Table does not show vertical scroll bar bugs when headers and columns are fixed at the same time. <issue id="3178"></issue></li>
+                        <li>Fixed bug where Table fixed columns could not be scrolled. <issue id="2871"></issue></li>
+                        <li>Fixed Table header overflow sometimes. <issue id="3178"></issue></li>
+                        <li>Fixed the bug that the Table header is too long, sometimes causing scroll bars to overflow. <issue id="3178"></issue></li>
+                        <li>Fixed bug where TimePicker set initial value to empty array. <issue id="3161"></issue></li>
+                        <li>Fixed a bug in the logic when the DatePicker selected the range and clicked to switch the next year button. <issue id="3158"></issue></li>
+                        <li>Fixed Sider bug of using <code>v-model</code> incorrectly. <issue id="3186"></issue></li>
+                        <li>Fixed Slider bug that setting step as a decimal, sometimes unable to drag to the maximum. <issue id="3195"></issue></li>
+                        <li>Fixed Slider bug that click on the slider and could not trigger the on-change event for the first time. <issue id="3291"></issue></li>
+                        <li>Fixed Menu bug in the accordion mode, the event on-open-change returns wrong value. <issue id="3298"></issue></li>
+                        <li>Fixed the bug that the Option of Select is too long and the style is incorrect. <issue id="2931"></issue></li>
+                        <li>Fixed Select bug that click too fast.</li>
+                        <li>Fixed the FormItem bug as slot, can not get correct Form sometimes.</li>
+                        <blockquote>Special thanks to <mention id="huanghong1125">@huanghong1125</mention> contribution!</blockquote>
+                    </ul>
+                </Timeline-item>
+                <Timeline-item>
                     <Icon type="planet" size="18" slot="dot"></Icon>
-                    <Anchor title="2.11.0 Alto's Odyssey" h2>
+                    <inAnchor title="2.11.0 Alto's Odyssey" h2>
                         <span class="doc-update-important">Mourning Stephen Hawking</span>
-                    </Anchor>
+                    </inAnchor>
                     <p>
                         <code>2018-03-14</code>
                     </p>
@@ -46,7 +189,7 @@
                     </ul>
                 </Timeline-item>
                 <Timeline-item>
-                    <Anchor title="2.10.1" h2></Anchor>
+                    <inAnchor title="2.10.1" h2></inAnchor>
                     <p>
                         <code>2018-03-09</code>
                     </p>
@@ -55,7 +198,7 @@
                     </ul>
                 </Timeline-item>
                 <Timeline-item>
-                    <Anchor title="2.10.0 Reigns" h2></Anchor>
+                    <inAnchor title="2.10.0 Reigns" h2></inAnchor>
                     <p>
                         <code>2018-03-09</code>
                     </p>
@@ -88,7 +231,7 @@
                     </ul>
                 </Timeline-item>
                 <Timeline-item>
-                    <Anchor title="2.9.2" h2></Anchor>
+                    <inAnchor title="2.9.2" h2></inAnchor>
                     <p>
                         <code>2018-02-02</code>
                     </p>
@@ -97,7 +240,7 @@
                     </ul>
                 </Timeline-item>
                 <Timeline-item>
-                    <Anchor title="2.9.1" h2></Anchor>
+                    <inAnchor title="2.9.1" h2></inAnchor>
                     <p>
                         <code>2018-01-30</code>
                     </p>
@@ -107,7 +250,7 @@
                     </ul>
                 </Timeline-item>
                 <Timeline-item>
-                    <Anchor title="2.9.0 Agent A" h2></Anchor>
+                    <inAnchor title="2.9.0 Agent A" h2></inAnchor>
                     <p>
                         <code>2018-01-24</code>
                     </p>
@@ -138,9 +281,9 @@
                 </Timeline-item>
                 <Timeline-item>
                     <Icon type="ios-snowy" class="ivu-load-loop doc-update-loop" style="font-size: 32px;color: rgb(220,50,51)" slot="dot"></Icon>
-                    <Anchor title="2.8.0 Oceanhorn" h2>
+                    <inAnchor title="2.8.0 Oceanhorn" h2>
                         <span class="doc-update-important">Merry Christmas</span>
-                    </Anchor>
+                    </inAnchor>
                     <p>
                         <code>2017-12-25</code>
                     </p>
@@ -156,7 +299,7 @@
                     </ul>
                 </Timeline-item>
                 <Timeline-item>
-                    <Anchor title="2.7.4" h2></Anchor>
+                    <inAnchor title="2.7.4" h2></inAnchor>
                     <p>
                         <code>2017-12-01</code>
                     </p>
@@ -168,7 +311,7 @@
                     </ul>
                 </Timeline-item>
                 <Timeline-item>
-                    <Anchor title="2.7.3" h2></Anchor>
+                    <inAnchor title="2.7.3" h2></inAnchor>
                     <p>
                         <code>2017-11-16</code>
                     </p>
@@ -179,7 +322,7 @@
                     </ul>
                 </Timeline-item>
                 <Timeline-item>
-                    <Anchor title="2.7.2" h2></Anchor>
+                    <inAnchor title="2.7.2" h2></inAnchor>
                     <p>
                         <code>2017-11-14</code>
                     </p>
@@ -188,7 +331,7 @@
                     </ul>
                 </Timeline-item>
                 <Timeline-item>
-                    <Anchor title="2.7.1" h2></Anchor>
+                    <inAnchor title="2.7.1" h2></inAnchor>
                     <p>
                         <code>2017-11-14</code>
                     </p>
@@ -197,7 +340,7 @@
                     </ul>
                 </Timeline-item>
                 <Timeline-item>
-                    <Anchor title="2.7.0 Lara Croft GO" h2></Anchor>
+                    <inAnchor title="2.7.0 Lara Croft GO" h2></inAnchor>
                     <p>
                         <code>2017-11-13</code>
                     </p>
@@ -224,7 +367,7 @@
                     </ul>
                 </Timeline-item>
                 <Timeline-item>
-                    <Anchor title="2.6.0 FRAMED" h2></Anchor>
+                    <inAnchor title="2.6.0 FRAMED" h2></inAnchor>
                     <p>
                         <code>2017-10-26</code>
                     </p>
@@ -246,7 +389,7 @@
                     </ul>
                 </Timeline-item>
                 <Timeline-item>
-                    <Anchor title="2.5.1" h2></Anchor>
+                    <inAnchor title="2.5.1" h2></inAnchor>
                     <p>
                         <code>2017-10-18</code>
                     </p>
@@ -255,7 +398,7 @@
                     </ul>
                 </Timeline-item>
                 <Timeline-item>
-                    <Anchor title="2.5.0 Old Man’s Journey" h2></Anchor>
+                    <inAnchor title="2.5.0 Old Man’s Journey" h2></inAnchor>
                     <p>
                         <code>2017-10-17</code>
                     </p>
@@ -275,7 +418,7 @@
                     </ul>
                 </Timeline-item>
                 <Timeline-item>
-                    <Anchor title="2.4.0 Monument" h2></Anchor>
+                    <inAnchor title="2.4.0 Monument" h2></inAnchor>
                     <p>
                         <code>2017-09-25</code>
                     </p>
@@ -301,7 +444,7 @@
                     </ul>
                 </Timeline-item>
                 <Timeline-item>
-                    <Anchor title="2.3.1 & 2.3.2" h2></Anchor>
+                    <inAnchor title="2.3.1 & 2.3.2" h2></inAnchor>
                     <p>
                         <code>2017-09-10</code>
                     </p>
@@ -312,7 +455,7 @@
                     </ul>
                 </Timeline-item>
                 <Timeline-item>
-                    <Anchor title="2.3.0 Lumino City" h2></Anchor>
+                    <inAnchor title="2.3.0 Lumino City" h2></inAnchor>
                     <p>
                         <code>2017-09-05</code>
                     </p>
@@ -340,7 +483,7 @@
                 </Timeline-item>
                 <Timeline-item color="red">
                     <Icon type="ios-heart" size="18" slot="dot"></Icon>
-                    <Anchor title="2.2.0 Shadowmatic" h2></Anchor>
+                    <inAnchor title="2.2.0 Shadowmatic" h2></inAnchor>
                     <p>
                         <code>2017-08-28</code>
                     </p>
@@ -359,7 +502,7 @@
                     </ul>
                 </Timeline-item>
                 <Timeline-item>
-                    <Anchor title="2.1.0 Alto's Adventure" h2></Anchor>
+                    <inAnchor title="2.1.0 Alto's Adventure" h2></inAnchor>
                     <p>
                         <code>2017-08-14</code>
                     </p>
@@ -384,7 +527,7 @@
                 </Timeline-item>
                 <Timeline-item color="green">
                     <Icon type="trophy" size="18" slot="dot"></Icon>
-                    <Anchor title="2.0.0 Leo's Fortune" h2></Anchor>
+                    <inAnchor title="2.0.0 Leo's Fortune" h2></inAnchor>
                     <p>
                         <code>2017-07-28</code>
                     </p>
@@ -411,7 +554,7 @@
                     </ul>
                 </Timeline-item>
                 <Timeline-item>
-                    <Anchor title="2.0.0-rc.19" h2></Anchor>
+                    <inAnchor title="2.0.0-rc.19" h2></inAnchor>
                     <p>
                         <code>2017-07-17</code>
                     </p>
@@ -425,7 +568,7 @@
                     </ul>
                 </Timeline-item>
                 <Timeline-item>
-                    <Button type="ghost" size="large" @click="handleBefore">View 1.x Change Log</Button>
+                    <Button size="large" @click="handleBefore">View 1.x Change Log</Button>
                 </Timeline-item>
             </Timeline>
         </article>
@@ -435,7 +578,7 @@
     import iArticle from '../../components/article.vue';
     import iCode from 'iCode';
     import Code from '../../code/guide';
-    import Anchor from '../../components/anchor.vue';
+    import inAnchor from '../../components/anchor.vue';
     import issue from '../../components/issue.vue';
     import mention from '../../components/mention.vue';
 
@@ -445,7 +588,7 @@
         components: {
             iArticle,
             iCode,
-            Anchor,
+            inAnchor,
             issue,
             mention
         },

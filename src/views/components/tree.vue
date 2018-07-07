@@ -2,9 +2,9 @@
     <i-article>
         <article>
             <h1>Tree 树形控件</h1>
-            <Anchor title="概述" h2></Anchor>
+            <inAnchor title="概述" h2></inAnchor>
             <p>文件夹、组织架构、生物分类、国家地区等等，世间万物的大多数结构都是树形结构。使用树控件可以完整展现其中的层级关系，并具有展开收起选择等交互功能。</p>
-            <Anchor title="代码示例" h2></Anchor>
+            <inAnchor title="代码示例" h2></inAnchor>
             <Demo title="基础用法">
                 <div slot="demo">
                     <Tree :data="data1"></Tree>
@@ -66,8 +66,8 @@
             <ad></ad>
 
             <div class="api">
-                <Anchor title="API" h2></Anchor>
-                <Anchor title="Tree props" h3></Anchor>
+                <inAnchor title="API" h2></inAnchor>
+                <inAnchor title="Tree props" h3></inAnchor>
                 <table>
                     <thead>
                         <tr>
@@ -114,9 +114,15 @@
                             <td>Function</td>
                             <td>-</td>
                         </tr>
+                        <tr>
+                            <td>children-key</td>
+                            <td>定义子节点键</td>
+                            <td>String</td>
+                            <td>children</td>
+                        </tr>
                     </tbody>
                 </table>
-                <Anchor title="Tree events" h3></Anchor>
+                <inAnchor title="Tree events" h3></inAnchor>
                 <table>
                     <thead>
                         <tr>
@@ -143,7 +149,7 @@
                         </tr>
                     </tbody>
                 </table>
-                <Anchor title="Tree methods" h3></Anchor>
+                <inAnchor title="Tree methods" h3></inAnchor>
                 <table>
                     <thead>
                         <tr>
@@ -165,7 +171,7 @@
                         </tr>
                     </tbody>
                 </table>
-                <Anchor title="children" h3></Anchor>
+                <inAnchor title="children" h3></inAnchor>
                 <table>
                     <thead>
                         <tr>
@@ -235,7 +241,7 @@
     import iCode from 'iCode';
     import Demo from '../../components/demo.vue';
     import Code from '../../code/tree';
-    import Anchor from '../../components/anchor.vue';
+    import inAnchor from '../../components/anchor.vue';
     import studyRender from '../../components/study.vue';
 
     export default {
@@ -243,7 +249,7 @@
             iArticle,
             iCode,
             Demo,
-            Anchor,
+            inAnchor,
             studyRender
         },
         data () {
@@ -386,11 +392,11 @@
                                 }, [
                                     h('Button', {
                                         props: Object.assign({}, this.buttonProps, {
-                                            icon: 'ios-plus-empty',
+                                            icon: 'ios-add',
                                             type: 'primary'
                                         }),
                                         style: {
-                                            width: '52px'
+                                            width: '64px'
                                         },
                                         on: {
                                             click: () => { this.append(data) }
@@ -432,7 +438,7 @@
                     }
                 ],
                 buttonProps: {
-                    type: 'ghost',
+                    type: 'default',
                     size: 'small',
                 }
             }
@@ -482,7 +488,7 @@
                     }, [
                         h('Button', {
                             props: Object.assign({}, this.buttonProps, {
-                                icon: 'ios-plus-empty'
+                                icon: 'ios-add'
                             }),
                             style: {
                                 marginRight: '8px'
@@ -493,7 +499,7 @@
                         }),
                         h('Button', {
                             props: Object.assign({}, this.buttonProps, {
-                                icon: 'ios-minus-empty'
+                                icon: 'ios-remove'
                             }),
                             on: {
                                 click: () => { this.remove(root, node, data) }

@@ -8,9 +8,9 @@
     <i-article>
         <article>
             <h1>Slider</h1>
-            <Anchor title="Brief Introduction" h2></Anchor>
+            <inAnchor title="Brief Introduction" h2></inAnchor>
             <p>A Slider component for displaying current value and intervals in range.</p>
-            <Anchor title="Examples" h2></Anchor>
+            <inAnchor title="Examples" h2></inAnchor>
             <Demo title="Basic Usage">
                 <div slot="demo">
                     <Slider v-model="value1"></Slider>
@@ -68,8 +68,8 @@
             <ad></ad>
 
             <div class="api">
-                <Anchor title="API" h2></Anchor>
-                <Anchor title="Slider props" h3></Anchor>
+                <inAnchor title="API" h2></inAnchor>
+                <inAnchor title="Slider props" h3></inAnchor>
                 <table>
                     <thead>
                         <tr>
@@ -140,9 +140,15 @@
                             <td>Function</td>
                             <td>value</td>
                         </tr>
+                        <tr>
+                            <td>input-size</td>
+                            <td>The size of InputNumber. The value could be <code>large</code>, <code>small</code>, <code>default</code>or none. Only works when show-input is open.</td>
+                            <td>String</td>
+                            <td>default</td>
+                        </tr>
                     </tbody>
                 </table>
-                <Anchor title="Slider events" h3></Anchor>
+                <inAnchor title="Slider events" h3></inAnchor>
                 <table>
                     <thead>
                         <tr>
@@ -173,14 +179,14 @@
     import iCode from 'iCode';
     import Demo from '../../components/demo.vue';
     import Code from '../../code/slider';
-    import Anchor from '../../components/anchor.vue';
+    import inAnchor from '../../components/anchor.vue';
 
     export default {
         components: {
             iArticle,
             iCode,
             Demo,
-            Anchor
+            inAnchor
         },
         data () {
             return {

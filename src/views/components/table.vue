@@ -29,11 +29,11 @@
         <i-article>
             <article>
                 <h1>Table 表格</h1>
-                <Anchor title="概述" h2></Anchor>
+                <inAnchor title="概述" h2></inAnchor>
                 <p>主要用于展示大量结构化数据。</p>
                 <p>支持排序、筛选、分页、自定义操作、导出 csv 等复杂功能。</p>
                 <Alert show-icon style="margin-top: 16px">注意：非 template/render 模式下，需使用 <code>i-table</code>。</Alert>
-                <Anchor title="代码示例" h2></Anchor>
+                <inAnchor title="代码示例" h2></inAnchor>
                 <Demo title="基础用法" vertical hide-code>
                     <div slot="demo">
                         <Table :columns="columns1" :data="data1"></Table>
@@ -113,7 +113,7 @@
                     <div slot="desc">
                         <p>通过设置属性 <code>highlight-row</code>，可以选中某一行。</p>
                         <p>当选择时，触发事件 <code>@on-current-change</code>，可以自定义操作，事件返回两个值 <code>currentRow</code> 和 <code>oldCurrentRow</code>，分别为当前行的数据和上一次选择的数据。</p>
-                        <p>通过给 <code>columns</code> 数据设置一项，指定 <code>type: 'index'</code>，可以自动显示一个从 1 开始的索引列。</p>
+                        <p>通过给 <code>columns</code> 数据设置一项，指定 <code>type: 'index'</code>，可以自动显示一个从 1 开始的索引列。使用 <code>indexMethod</code> 可以自定义序号。</p>
                         <p>给 data 项设置特殊 key <code>_highlight: true</code> 可以默认选中当前项。</p>
                         <p>调用 <code>clearCurrentRow</code> 方法可以手动清除选中项。</p>
                     </div>
@@ -188,6 +188,17 @@
                     </div>
                     <i-code lang="html" slot="code">{{ code.expand }}</i-code>
                 </Demo>
+
+                <Demo title="表头分组" vertical hide-code>
+                    <div slot="demo">
+                        <Table :columns="columns11" :data="data10" border height="500"></Table>
+                    </div>
+                    <div slot="desc">
+                        <p>给 column 设置 children，可以渲染出分组表头。</p>
+                    </div>
+                    <i-code lang="html" slot="code">{{ code.head }}</i-code>
+                </Demo>
+
                 <Demo title="加载中" vertical hide-code>
                     <div slot="demo">
                         <Table :loading="loading" :columns="columns1" :data="data1"></Table>
@@ -229,7 +240,7 @@
                     </div>
                     <i-code lang="html" slot="code">{{ code.csv }}</i-code>
                 </Demo>
-                <Anchor title="高级示例" h2></Anchor>
+                <inAnchor title="高级示例" h2></inAnchor>
                 <p>以上示例已经基本涵盖了表格组件的所有功能，我们根据实际业务场景，增加了一些较为复杂的示例，可以结合来看，更深入了解表格组件的使用。</p>
                 <Button type="primary" size="large" @click="table1 = true">带有分页的复杂表格</Button>
                 <Button type="primary" size="large" @click="table2 = true">多列指标筛选的表格</Button>
@@ -238,8 +249,8 @@
                 <ad></ad>
 
                 <div class="api">
-                    <Anchor title="API" h2></Anchor>
-                    <Anchor title="Table props" h3></Anchor>
+                    <inAnchor title="API" h2></inAnchor>
+                    <inAnchor title="Table props" h3></inAnchor>
                     <table>
                         <thead>
                         <tr>
@@ -348,7 +359,7 @@
                         </tr>
                         </tbody>
                     </table>
-                    <Anchor title="Table events" h3></Anchor>
+                    <inAnchor title="Table events" h3></inAnchor>
                     <table>
                         <thead>
                         <tr>
@@ -454,7 +465,7 @@
                         </tr>
                         </tbody>
                     </table>
-                    <Anchor title="Table slot" h3></Anchor>
+                    <inAnchor title="Table slot" h3></inAnchor>
                     <table>
                         <thead>
                         <tr>
@@ -477,7 +488,7 @@
                         </tr>
                         </tbody>
                     </table>
-                    <Anchor title="Table methods" h3></Anchor>
+                    <inAnchor title="Table methods" h3></inAnchor>
                     <table>
                         <thead>
                         <tr>
@@ -543,7 +554,7 @@
                         </tr>
                         </tbody>
                     </table>
-                    <Anchor title="column" h3></Anchor>
+                    <inAnchor title="column" h3></inAnchor>
                     <p>列描述数据对象，是 columns 中的一项</p>
                     <table>
                         <thead>
@@ -580,6 +591,18 @@
                             <td>-</td>
                         </tr>
                         <tr>
+                            <td>minWidth</td>
+                            <td>最小列宽</td>
+                            <td>Number</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>maxWidth</td>
+                            <td>最大列宽</td>
+                            <td>Number</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
                             <td>align</td>
                             <td>对齐方式，可选值为 <code>left</code> 左对齐、<code>right</code> 右对齐和 <code>center</code> 居中对齐</td>
                             <td>String</td>
@@ -604,6 +627,12 @@
                             <td>false</td>
                         </tr>
                         <tr>
+                            <td>tooltip</td>
+                            <td>开启后，文本将不换行，超出部分显示为省略号，并用 Tooltip 组件显示完整内容</td>
+                            <td>Boolean</td>
+                            <td>false</td>
+                        </tr>
+                        <tr>
                             <td>render</td>
                             <!--<td>自定义渲染列，传入三个参数 row、column 和 index，分别指当前行数据，当前列数据，当前行索引，详见示例</td>-->
                             <td>自定义渲染列，使用 Vue 的 Render 函数。传入两个参数，第一个是 h，第二个为对象，包含 row、column 和 index，分别指当前行数据，当前列数据，当前行索引，详见示例。<study-render></study-render></td>
@@ -614,6 +643,12 @@
                             <td>renderHeader</td>
                             <td>自定义列头显示内容，使用 Vue 的 Render 函数。传入两个参数，第一个是 h，第二个为对象，包含 <code>column</code> 和 <code>index</code>，分别为当前列数据和当前列索引。</td>
                             <td>Function</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>indexMethod</td>
+                            <td>type 为 index 时可用，自定义序号</td>
+                            <td>Function，参数 row 为当前行内容</td>
                             <td>-</td>
                         </tr>
                         <tr>
@@ -662,6 +697,12 @@
                             <td>filterRemote</td>
                             <td>使用远程过滤</td>
                             <td>Function</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>children</td>
+                            <td>表头分组</td>
+                            <td>Array</td>
                             <td>-</td>
                         </tr>
                         </tbody>
@@ -746,7 +787,7 @@
     import iCode from 'iCode';
     import Demo from '../../components/demo.vue';
     import Code from '../../code/table';
-    import Anchor from '../../components/anchor.vue';
+    import inAnchor from '../../components/anchor.vue';
 
     import expandRow from './table-expand.vue';
     import studyRender from '../../components/study.vue';
@@ -756,7 +797,7 @@
             iArticle,
             iCode,
             Demo,
-            Anchor,
+            inAnchor,
             expandRow,
             studyRender
         },
@@ -828,7 +869,7 @@
                         key: 'status',
                         render: (h, params) => {
                             const row = params.row;
-                            const color = row.status === 1 ? 'blue' : row.status === 2 ? 'green' : 'red';
+                            const color = row.status === 1 ? 'primary' : row.status === 2 ? 'success' : 'error';
                             const text = row.status === 1 ? 'Working' : row.status === 2 ? 'Success' : 'Fail';
 
                             return h('Tag', {
@@ -1288,6 +1329,102 @@
                         key: 'address'
                     }
                 ],
+                columns11: [
+                    {
+                        title: 'Name',
+                        key: 'name',
+                        align: 'center',
+                        width: 200,
+                        fixed: 'left',
+                        filters: [
+                            {
+                                label: 'Joe',
+                                value: 1
+                            },
+                            {
+                                label: 'John',
+                                value: 2
+                            }
+                        ],
+                        filterMultiple: false,
+                        filterMethod (value, row) {
+                            if (value === 1) {
+                                return row.name === 'Joe';
+                            } else if (value === 2) {
+                                return row.name === 'John Brown';
+                            }
+                        }
+                    },
+                    {
+                        title: 'Other',
+                        align: 'center',
+                        children: [
+                            {
+                                title: 'Age',
+                                key: 'age',
+                                align: 'center',
+                                width: 200,
+                                sortable: true
+                            },
+                            {
+                                title: 'Address',
+                                align: 'center',
+                                children: [
+                                    {
+                                        title: 'Street',
+                                        key: 'street',
+                                        align: 'center',
+                                        width: 200
+                                    },
+                                    {
+                                        title: 'Block',
+                                        align: 'center',
+                                        children: [
+                                            {
+                                                title: 'Building',
+                                                key: 'building',
+                                                align: 'center',
+                                                width: 200,
+                                                sortable: true
+                                            },
+                                            {
+                                                title: 'Door No.',
+                                                key: 'door',
+                                                align: 'center',
+                                                width: 200
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        title: 'Company',
+                        align: 'center',
+                        children: [
+                            {
+                                title: 'Company Address',
+                                key: 'caddress',
+                                align: 'center',
+                                width: 200
+                            },
+                            {
+                                title: 'Company Name',
+                                key: 'cname',
+                                align: 'center',
+                                width: 200
+                            }
+                        ]
+                    },
+                    {
+                        title: 'Gender',
+                        key: 'gender',
+                        align: 'center',
+                        width: 200,
+                        fixed: 'right'
+                    }
+                ],
                 data1: [
                     {
                         name: 'John Brown',
@@ -1739,7 +1876,8 @@
                         music: 'actor'
                     }
                 ],
-                loading: true
+                loading: true,
+                data10: []
             }
         },
         computed: {
@@ -2034,6 +2172,22 @@
         },
         mounted () {
             this.changeTableColumns();
+
+            const data = [];
+            for (let i = 0; i < 20; i++) {
+                data.push({
+                    key: i,
+                    name: 'John Brown',
+                    age: i + 1,
+                    street: 'Lake Park',
+                    building: 'C',
+                    door: 2035,
+                    caddress: 'Lake Street 42',
+                    cname: 'SoftLake Co',
+                    gender: 'M',
+                });
+            }
+            this.data10 = data;
         }
     }
 </script>

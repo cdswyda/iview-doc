@@ -26,9 +26,9 @@
     <i-article>
         <article>
             <h1>Card 卡片</h1>
-            <Anchor title="概述" h2></Anchor>
+            <inAnchor title="概述" h2></inAnchor>
             <p>基础容器，用来显示文字、列表、图文等内容，也可以配合其它组件一起使用。</p>
-            <Anchor title="代码示例" h2></Anchor>
+            <inAnchor title="代码示例" h2></inAnchor>
             <Demo title="基本用法">
                 <div slot="demo">
                     <Card style="width:350px">
@@ -53,6 +53,7 @@
                 </div>
                 <div slot="desc">
                     <p>自定义标题、额外操作和主体内容，可以完全自由控制各个部分，也可以结合其它组件一起使用，较为灵活。</p>
+                    <p><blockquote>2.12.0 版本开始，可以通过设置属性 <code>title</code> 和 <code>icon</code> 快速设置标题栏。</blockquote></p>
                 </div>
                 <i-code lang="html" slot="code">{{ code.base }}</i-code>
             </Demo>
@@ -141,8 +142,8 @@
             <ad></ad>
 
             <div class="api">
-                <Anchor title="API" h2></Anchor>
-                <Anchor title="Card props" h3></Anchor>
+                <inAnchor title="API" h2></inAnchor>
+                <inAnchor title="Card props" h3></inAnchor>
                 <table>
                     <thead>
                         <tr>
@@ -177,9 +178,21 @@
                             <td>Number</td>
                             <td>16</td>
                         </tr>
+                        <tr>
+                            <td>title</td>
+                            <td>标题，2.12.0 新增</td>
+                            <td>String</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>icon</td>
+                            <td>标题前的图标，2.12.0 新增</td>
+                            <td>String</td>
+                            <td>-</td>
+                        </tr>
                     </tbody>
                 </table>
-                <Anchor title="Card slot" h3></Anchor>
+                <inAnchor title="Card slot" h3></inAnchor>
                 <table>
                     <thead>
                         <tr>
@@ -211,14 +224,14 @@
     import iCode from 'iCode';
     import Demo from '../../components/demo.vue';
     import Code from '../../code/card';
-    import Anchor from '../../components/anchor.vue';
+    import inAnchor from '../../components/anchor.vue';
 
     export default {
         components: {
             iArticle,
             iCode,
             Demo,
-            Anchor
+            inAnchor
         },
         data () {
             return {

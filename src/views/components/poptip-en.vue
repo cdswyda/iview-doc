@@ -18,23 +18,23 @@
     <i-article>
         <article>
             <h1>Poptip</h1>
-            <Anchor title="Brief Introduction" h2></Anchor>
+            <inAnchor title="Brief Introduction" h2></inAnchor>
             <p>Poptip is simlar to Tooltip. It has many common configurations. The difference is Poptip contains more content in a card style, such as link, table and button.</p>
             <p>Poptip can also contain a confirm dialog. Different to Modal. It'll be shown beside the nearest element, so it's relatively lighter.</p>
-            <Anchor title="Examples" h2></Anchor>
+            <inAnchor title="Examples" h2></inAnchor>
             <Demo title="Basic Usage">
                 <div slot="demo">
-                    <Poptip trigger="hover" title="提示标题" content="提示内容">
-                        <Button>hover 激活</Button>
+                    <Poptip trigger="hover" title="Title" content="content">
+                        <Button>Hover</Button>
                     </Poptip>
-                    <Poptip title="提示标题" content="提示内容">
-                        <Button>click 激活</Button>
+                    <Poptip title="Title" content="content">
+                        <Button>Click</Button>
                     </Poptip>
-                    <Poptip trigger="focus" title="提示标题" content="提示内容">
-                        <Button>focus 激活</Button>
+                    <Poptip trigger="focus" title="Title" content="content">
+                        <Button>Focus</Button>
                     </Poptip>
-                    <Poptip trigger="focus" title="提示标题" content="提示内容">
-                        <i-input placeholder="输入框的 focus"></i-input>
+                    <Poptip trigger="focus" title="Title" content="content">
+                        <Input placeholder="Input focus" />
                     </Poptip>
                 </div>
                 <div slot="desc">
@@ -46,49 +46,49 @@
             <Demo title="Direction">
                 <div slot="demo">
                     <div class="top">
-                        <Poptip title="提示标题" content="提示内容" placement="top-start">
-                            <Button>上左</Button>
+                        <Poptip title="Title" content="content" placement="top-start">
+                            <Button>Top Left</Button>
                         </Poptip>
-                        <Poptip title="提示标题" content="提示内容" placement="top">
-                            <Button>上边</Button>
+                        <Poptip title="Title" content="content" placement="top">
+                            <Button>Top Center</Button>
                         </Poptip>
-                        <Poptip title="提示标题" content="提示内容" placement="top-end">
-                            <Button>上右</Button>
+                        <Poptip title="Title" content="content" placement="top-end">
+                            <Button>Top Right</Button>
                         </Poptip>
                     </div>
                     <div class="center">
                         <div class="center-left">
-                            <Poptip title="提示标题" content="提示内容" placement="left-start">
-                                <Button>左上</Button>
+                            <Poptip title="Title" content="content" placement="left-start">
+                                <Button>Left Top</Button>
                             </Poptip><br><br>
-                            <Poptip title="提示标题" content="提示内容" placement="left">
-                                <Button>左边</Button>
+                            <Poptip title="Title" content="content" placement="left">
+                                <Button>Left Center</Button>
                             </Poptip><br><br>
-                            <Poptip title="提示标题" content="提示内容" placement="left-end">
-                                <Button>左下</Button>
+                            <Poptip title="Title" content="content" placement="left-end">
+                                <Button>Left Right</Button>
                             </Poptip>
                         </div>
                         <div class="center-right">
-                            <Poptip title="提示标题" content="提示内容" placement="right-start">
-                                <Button>右上</Button>
+                            <Poptip title="Title" content="content" placement="right-start">
+                                <Button>Right Top</Button>
                             </Poptip><br><br>
-                            <Poptip title="提示标题" content="提示内容" placement="right">
-                                <Button>右边</Button>
+                            <Poptip title="Title" content="content" placement="right">
+                                <Button>Right Center</Button>
                             </Poptip><br><br>
-                            <Poptip title="提示标题" content="提示内容" placement="right-end">
-                                <Button>右下</Button>
+                            <Poptip title="Title" content="content" placement="right-end">
+                                <Button>Right Bottom</Button>
                             </Poptip>
                         </div>
                     </div>
                     <div class="bottom">
-                        <Poptip title="提示标题" content="提示内容" placement="bottom-start">
-                            <Button>下左</Button>
+                        <Poptip title="Title" content="content" placement="bottom-start">
+                            <Button>Bottom Left</Button>
                         </Poptip>
-                        <Poptip title="提示标题" content="提示内容" placement="bottom">
-                            <Button>下边</Button>
+                        <Poptip title="Title" content="content" placement="bottom">
+                            <Button>Bottom Center</Button>
                         </Poptip>
-                        <Poptip title="提示标题" content="提示内容" placement="bottom-end">
-                            <Button>下右</Button>
+                        <Poptip title="Title" content="content" placement="bottom-end">
+                            <Button>Bottom Right</Button>
                         </Poptip>
                     </div>
                 </div>
@@ -100,10 +100,10 @@
             <Demo title="Close inside the Floating Layer">
                 <div slot="demo">
                     <Poptip v-model="visible">
-                        <a>click 激活</a>
-                        <div slot="title"><i>自定义标题</i></div>
+                        <a>Click</a>
+                        <div slot="title"><i>Custom title</i></div>
                         <div slot="content">
-                            <a @click="close">关闭提示框</a>
+                            <a @click="close">close</a>
                         </div>
                     </Poptip>
                 </div>
@@ -115,31 +115,31 @@
             <Demo title="Nest Complex Content">
                 <div slot="demo">
                     <Poptip placement="right" width="400">
-                        <Button type="ghost">click 激活</Button>
+                        <Button>Click</Button>
                         <div class="api" slot="content">
                             <table>
                                 <thead>
                                     <tr>
-                                        <th>版本号</th>
-                                        <th>更新时间</th>
-                                        <th>说明</th>
+                                        <th>Version</th>
+                                        <th>Update Time</th>
+                                        <th>Description</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
                                         <td>0.9.5</td>
                                         <td>2016-10-26</td>
-                                        <td>新增信息提示组件 <code>Tooltip</code>和<code>Poptip</code></td>
+                                        <td>Add new components <code>Tooltip</code> and <code>Poptip</code></td>
                                     </tr>
                                     <tr>
                                         <td>0.9.4</td>
                                         <td>2016-10-25</td>
-                                        <td>新增对话框组件 <code>Modal</code></td>
+                                        <td>Add new components <code>Modal</code></td>
                                     </tr>
                                     <tr>
                                         <td>0.9.2</td>
                                         <td>2016-09-28</td>
-                                        <td>新增选择器组件 <code>Select</code></td>
+                                        <td>Add new components <code>Select</code></td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -151,14 +151,25 @@
                 </div>
                 <i-code lang="html" slot="code">{{ code.slot }}</i-code>
             </Demo>
+            <Demo title="Automatic Wrap">
+                <div slot="demo">
+                    <Poptip word-wrap width="200" content="Steven Paul Jobs was an American entrepreneur and business magnate. He was the chairman, chief executive officer, and a co-founder of Apple Inc.">
+                        <Button>Long Content</Button>
+                    </Poptip>
+                </div>
+                <div slot="desc">
+                    <p>Set the property <code>word-wrap</code>, when the max value is exceeded, the text will automatically wrap and be aligned.</p>
+                </div>
+                <i-code lang="html" slot="code">{{ code.width }}</i-code>
+            </Demo>
             <Demo title="Confirm Dialog">
                 <div slot="demo">
                     <Poptip
                         confirm
-                        title="您确认删除这条内容吗？"
+                        title="Are you sure you want to delete this item?"
                         @on-ok="ok"
                         @on-cancel="cancel">
-                        <Button>删除</Button>
+                        <Button>Delete</Button>
                     </Poptip>
                     <Poptip
                         confirm
@@ -167,7 +178,7 @@
                         @on-cancel="cancel"
                         ok-text="yes"
                         cancel-text="no">
-                        <Button>国际化</Button>
+                        <Button>Internationalization</Button>
                     </Poptip>
                 </div>
                 <div slot="desc">
@@ -179,8 +190,8 @@
             <ad></ad>
 
             <div class="api">
-                <Anchor title="API" h2></Anchor>
-                <Anchor title="Poptip props" h3></Anchor>
+                <inAnchor title="API" h2></inAnchor>
+                <inAnchor title="Poptip props" h3></inAnchor>
                 <table>
                     <thead>
                         <tr>
@@ -211,7 +222,7 @@
                         </tr>
                         <tr>
                             <td>placement</td>
-                            <td>The direction tooltip shows. Optional value: <code>top</code><code>top-start</code><code>top-end</code><code>bottom</code><code>bottom-start</code><code>bottom-end</code><code>left</code><code>left-start</code><code>left-end</code><code>right</code><code>right-start</code><code>right-end</code></td>
+                            <td>The direction tooltip shows. Optional value: <code>top</code><code>top-start</code><code>top-end</code><code>bottom</code><code>bottom-start</code><code>bottom-end</code><code>left</code><code>left-start</code><code>left-end</code><code>right</code><code>right-start</code><code>right-end</code>, supports automatic recognition after 2.12.0</td>
                             <td>String</td>
                             <td>top</td>
                         </tr>
@@ -245,9 +256,41 @@
                             <td>Boolean</td>
                             <td>false</td>
                         </tr>
+                        <tr>
+                            <td>popper-class</td>
+                            <td>Setting class-name for Poptip, it is useful when using transfer.</td>
+                            <td>String</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>word-wrap</td>
+                            <td>When set to true, text beyond the specified width will wrap and align.</td>
+                            <td>Boolean</td>
+                            <td>false</td>
+                        </tr>
+                        <tr>
+                            <td>padding</td>
+                            <td>Custom the padding.</td>
+                            <td>String</td>
+                            <td>8px 16px</td>
+                        </tr>
+                        <tr>
+                            <td>offset</td>
+                            <td>Popover offset.</td>
+                            <td>Number</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>options</td>
+                            <td>Customize popper.js configuration items. For details, see <a href="https://popper.js.org/popper-documentation.html" target="_blank">popper.js document</a>.</td>
+                            <td>Object</td>
+                            <td>
+                                <i-code lang="js">{{ code.options }}</i-code>
+                            </td>
+                        </tr>
                     </tbody>
                 </table>
-                <Anchor title="Poptip events" h3></Anchor>
+                <inAnchor title="Poptip events" h3></inAnchor>
                 <table>
                     <thead>
                         <tr>
@@ -279,7 +322,7 @@
                         </tr>
                     </tbody>
                 </table>
-                <Anchor title="Poptip slot" h3></Anchor>
+                <inAnchor title="Poptip slot" h3></inAnchor>
                 <table>
                     <thead>
                         <tr>
@@ -311,14 +354,14 @@
     import iCode from 'iCode';
     import Demo from '../../components/demo.vue';
     import Code from '../../code/poptip';
-    import Anchor from '../../components/anchor.vue';
+    import inAnchor from '../../components/anchor.vue';
 
     export default {
         components: {
             iArticle,
             iCode,
             Demo,
-            Anchor
+            inAnchor
         },
         data () {
             return {
@@ -331,10 +374,10 @@
                 this.visible = false;
             },
             ok () {
-                this.$Message.info('点击了确定');
+                this.$Message.info('You click ok');
             },
             cancel () {
-                this.$Message.info('点击了取消');
+                this.$Message.info('You click cancel');
             }
         }
     }
