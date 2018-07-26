@@ -6,8 +6,11 @@
         <Divider class="asd-title" v-if="lang === 'zh-CN'">赞助商</Divider>
         <div class="asd asd-mb" @click="handleAd" v-if="lang === 'zh-CN'">
             <div class="asd-main">
-                <img src="../images/ad-juejin.jpg" style="border-radius: 6px">
+                <img src="../images/ad-juejin2.png" style="border-radius: 6px">
             </div>
+        </div>
+        <div class="asd-car" v-else>
+            <iframe src="http://file.iviewui.com/ad5.html" frameborder="0" width="100%" height="100%"></iframe>
         </div>
         <!--<div class="asd asd-mb" @click="handleAdBmqb" v-if="lang === 'zh-CN'">-->
             <!--<div class="asd-main">-->
